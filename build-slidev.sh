@@ -18,6 +18,7 @@ for item in $(find ./presentations -mindepth 1 -maxdepth 1 -type d); do
   fi
 
   mv dist/ ../../dist/$directory_name
+  cd ../../
 done
 
 echo "All presentations built successfully"
