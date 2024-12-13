@@ -147,3 +147,6 @@ dist
 
 .slidev
 **/*.pdf
+
+### Turborepo ###
+.turbo

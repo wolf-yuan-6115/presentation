@@ -7,16 +7,17 @@
     "email": "me@wolf-yuan.dev"
   },
   "private": true,
+  "workspaces": [
+    "presentations/*"
+  ],
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
-    "build": "bash build-slidev.sh"
-  },
-  "dependencies": {
-    "@slidev/cli": "^0.50.0-beta.10",
-    "@slidev/theme-default": "^0.25.0",
-    "vue": "^3.5.13"
+    "build": "turbo build",
+    "postbuild": "bash ./merge-slides.sh",
+    "dev": "turbo dev"
   },
   "devDependencies": {
-    "playwright-chromium": "^1.49.0",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "turbo": "^2.3.3"
   }
 }
