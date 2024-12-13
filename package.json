@@ -1,0 +1,22 @@
+{
+  "name": "presentation",
+  "version": "0.0.1",
+  "type": "module",
+  "author": {
+    "name": "Wolf Yuan",
+    "email": "me@wolf-yuan.dev"
+  },
+  "private": true,
+  "scripts": {
+    "build": "bash build-slidev.sh"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.50.0-beta.10",
+    "@slidev/theme-default": "^0.25.0",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.49.0",
+    "prettier": "^3.3.3"
+  }
+}
