@@ -34,6 +34,25 @@ importers:
         specifier: ^1.49.0
         version: 1.49.1
 
+  presentations/clhs-autolearning-rust:
+    dependencies:
+      '@slidev/cli':
+        specifier: ^0.50.0-beta.10
+        version: 0.50.0-beta.10(@babel/parser@7.26.3)(@nuxt/kit@3.14.1592(rollup@4.28.1))(@types/markdown-it@14.1.2)(@types/node@18.19.68)(@vue/compiler-sfc@3.5.13)(playwright-chromium@1.49.1)(postcss@8.4.49)(rollup@4.28.1)(tsx@4.19.2)
+      '@slidev/theme-default':
+        specifier: ^0.25.0
+        version: 0.25.0
+      qrcode.vue:
+        specifier: ^3.6.0
+        version: 3.6.0(vue@3.5.13(typescript@5.6.3))
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.13(typescript@5.6.3)
+    devDependencies:
+      playwright-chromium:
+        specifier: ^1.49.0
+        version: 1.49.1
+
 packages:
 
   '@ampproject/remapping@2.3.0':
