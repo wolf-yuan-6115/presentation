@@ -1,5 +1,6 @@
 {
   "name": "clhs-autolearning-rust",
+  "description": "A presentation about my learning path of Rust, basically just describing what is Rust",
   "type": "module",
   "private": true,
   "scripts": {

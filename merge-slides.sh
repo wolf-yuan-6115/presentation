@@ -4,6 +4,8 @@ echo "Copying all slidev presentations"
 rm -r dist/
 mkdir dist/
 
+cp -r homepage/dist/* dist/
+
 for item in $(find ./presentations -mindepth 1 -maxdepth 1 -type d); do
   cd "$item"
   directory_name=${PWD##*/}

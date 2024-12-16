@@ -1,5 +1,6 @@
 {
   "name": "clcs-1st-html-basic",
+  "description": "CLCS 1st HTML teaching presentation",
   "type": "module",
   "private": true,
   "scripts": {
