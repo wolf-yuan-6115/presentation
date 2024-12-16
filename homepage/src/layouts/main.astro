@@ -1,0 +1,55 @@
+---
+import "@fontsource-variable/jetbrains-mono/wght.css";
+
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+import { SEO } from "astro-seo";
+---
+
+<html lang={Astro.currentLocale === "en" ? "en" : "zh-Hant"} transition:name="root" transition:animate="none">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <title>Presentations - Wolf Yuan</title>
+    <SEO
+      description="Presentations I have given in the past, all of them was built with Slidev & heart"
+      charset="UTF-8"
+      openGraph={{
+        basic: {
+          title: "Presentations - Wolf Yuan",
+          type: "website",
+          image: "https://wolf-yuan.dev/logo_512x512.webp",
+        }
+      }}
+      twitter={{
+        title: "Presentations - Wolf Yuan",
+        description: "Presentations I have given in the past, all of them was built with Slidev & heart",
+        card: "summary",
+        site: "@wolfyuan1135",
+        image: "https://wolf-yuan.dev/logo_512x512.webp",
+      }}
+    />
+  </head>
+  <body class="bg-gray-900 text-gray-50">
+    <div class="h-screen flex flex-col">
+      <Nav />
+
+      <div class="mx-auto mb-auto max-w-6xl w-screen" transition:name="content" transition:animate="fade">
+        <div class="mx-7">
+          <slot />
+        </div>
+      </div>
+
+      <Footer class="place-self-end" />
+    </div>
+
+    {/* Hacky way to fix scrollbar theme */}
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+    </style>
+  </body>
+</html>

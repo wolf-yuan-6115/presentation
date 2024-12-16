@@ -1,0 +1,63 @@
+---
+import { readdirSync, readFileSync } from "node:fs";
+import Base from "../layouts/main.astro";
+import Button from "../components/Button.astro";
+
+import { Icon } from "astro-icon/components";
+
+const presentations: {path: string, desc: string}[] = [];
+
+const presentationDirs = readdirSync("../presentations");
+
+for (let i = 0; i < presentationDirs.length; i++) {
+  const data = readFileSync(`../presentations/${presentationDirs[i]}/package.json`, "utf-8");
+  presentations.push({
+    path: presentationDirs[i],
+    desc: JSON.parse(data).description,
+  })
+}
+---
+
+<Base>
+  <section>
+    <p class="py-6 text-3xl font-extrabold md:text-4xl">Presentations</p>
+    <p class="pt-2 text-md md:text-lg">Here's a full list of presentations that I've given.</p>
+  </section>
+
+  <section class="py-7">
+    <div class="grid grid-cols-1 gap-4">
+      {
+        presentations.map((item) => (
+          <a
+            href={`/presentation/${item.path}`}
+            class="border-2 border-gray-600 bg-gray-800 p-4 rounded-md duration-300 hover:border-gray-400"
+          >
+            <p class="text-lg md:text-xl font-extrabold">{item.path}</p>
+            <p class="pt-4 text-md">{item.desc}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="py-8">
+    <p class="pb-4 md:pb-0 self-center text-center text-xl font-semibold md:text-2xl">
+      Want to see more?
+    </p>
+
+    <Button
+      link="https://wolf-yuan.dev/"
+      target="_blank"
+      className="mx-auto mt-6 border-violet-400 hover:bg-violet-400 hover:shadow-violet-400"
+      glow={false}
+    >
+      <Icon
+        name="material-symbols:arrow-back-rounded"
+        class="inline"
+      />
+      <p class="md:text-md inline text-sm">
+      Check out my main website
+      </p>
+    </Button>
+  </section>
+</Base>

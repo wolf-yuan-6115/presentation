@@ -1,0 +1,70 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer
+  class="mt-8 bg-gray-950"
+  transition:name="footer"
+  transition:animate="none"
+>
+  <div class="mx-auto max-w-6xl px-6 py-6 lg:px-4">
+    <div class="grid grid-flow-row grid-cols-1 md:grid-cols-2">
+      <div>
+        <p class="pb-7 pt-2 text-xl font-bold md:pt-0 md:text-2xl">
+          <a
+            href="https://w.wolf-yuan.dev/project/presentation"
+            target="_blank"
+            class="transition-colors duration-200 hover:text-gray-400"
+          >
+            <Icon name="simple-icons:gitlab" class="inline" />
+            wolf-yuan/presentation
+          </a>
+        </p>
+        <p class="text-lg font-bold text-gray-400">
+          Made with
+          <a href="https://astro.build" target="_blank">
+            <Icon
+              name="simple-icons:astro"
+              class="inline text-[#BC52EE]"
+            />
+            <span class="sr-only">Astro</span>
+          </a>
+          <a href="https://tailwindcss.com" target="_blank">
+            <Icon
+              name="simple-icons:tailwindcss"
+              class="inline text-[#06B6D4]"
+            />
+            <span class="sr-only">Tailwind CSS</span>
+          </a>
+          and
+          <Icon
+            name="material-symbols:favorite-rounded"
+            class="inline text-red-500"
+          />
+        </p>
+      </div>
+      <div
+        class="flex h-fit flex-row items-center justify-start gap-6 pt-4 text-xl text-gray-400 md:mx-6 md:justify-end md:pt-0 md:text-2xl md:text-gray-50"
+      >
+        <div class="w-fit">
+          <a href="https://w.wolf-yuan.dev/facebook" class="w-fit">
+            <Icon
+              name="simple-icons:facebook"
+              class="inline duration-300 hover:text-[#0866FF]"
+            />
+            <p class="sr-only">Facebook</p>
+          </a>
+        </div>
+        <div class="w-fit">
+          <a href="https://w.wolf-yuan.dev/instagram" class="w-fit">
+            <Icon
+              name="simple-icons:instagram"
+              class="inline duration-300 hover:text-[#E4405F]"
+            />
+            <p class="sr-only">Instagram</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
