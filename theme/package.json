@@ -1,0 +1,34 @@
+{
+  "name": "theme",
+  "version": "0.0.1",
+  "description": "Slidev theme used in this project",
+  "author": {
+    "name": "Wolf Yuan",
+    "email": "me@wolf-yuan.dev"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0",
+    "slidev": ">=v0.47.0"
+  },
+  "slidev": {
+    "defaults": {
+      "fonts": {
+        "sans": "LXGW WenKai TC",
+        "serif": "LXGW WenKai TC",
+        "mono": "JetBrains Mono"
+      },
+      "themeConfig": {
+        "primary": "#818cf8"
+      }
+    }
+  },
+  "dependencies": {
+    "@slidev/types": "^0.47.0",
+    "codemirror-theme-vars": "^0.1.2",
+    "prism-theme-vars": "^0.2.4"
+  },
+  "devDependencies": {
+    "vue": "^3.5.13"
+  }
+}
