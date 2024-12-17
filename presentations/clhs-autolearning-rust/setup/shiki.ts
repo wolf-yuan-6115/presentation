@@ -3,7 +3,7 @@ import { defineShikiSetup } from "@slidev/types";
 export default defineShikiSetup(() => {
   return {
     themes: {
-      light: "catppuccin-latte",
+      light: "catppuccin-mocha",
       dark: "catppuccin-mocha",
     },
   };
