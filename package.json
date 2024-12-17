@@ -8,7 +8,7 @@
   },
   "private": true,
   "workspaces": [
-    "homepage",
+    "landing",
     "presentations/*"
   ],
   "packageManager": "pnpm@9.9.0",
