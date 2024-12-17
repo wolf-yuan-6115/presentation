@@ -18,6 +18,10 @@ overviewSnapshots: true
 
 ---
 
+<QRCodeWrapper></QRCodeWrapper>
+
+---
+
 ## `$whoami`
 
 我是 Wolf Yuan，人們都叫我 Wolf
