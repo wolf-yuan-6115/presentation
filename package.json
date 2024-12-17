@@ -9,6 +9,7 @@
   "private": true,
   "workspaces": [
     "landing",
+    "theme",
     "presentations/*"
   ],
   "packageManager": "pnpm@9.9.0",

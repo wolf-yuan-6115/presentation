@@ -1,14 +1,10 @@
 ---
-theme: default
+theme: theme
 background: /background.jpg
 title: Rust 自主學習成果
-info: 講述 Rust 的基本概念，並展示使用 Rust 製作成的 Discord 機器人成果
+info: 介紹什麼是 Rust 程式語言，以及為什麼它十分重要
 drawings:
   persist: false
-fonts:
-  sans: "LXGW WenKai TC"
-  serif: "LXGW WenKai TC"
-  mono: "JetBrains Mono"
 transition: slide-left
 mdc: true
 overviewSnapshots: true

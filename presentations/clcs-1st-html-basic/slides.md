@@ -1,14 +1,10 @@
 ---
-theme: default
+theme: theme
 background: /background.jpg
 title: 搞個網頁
 info: 酷酷的網頁基礎介紹
 drawings:
   persist: false
-fonts:
-  sans: "LXGW WenKai TC"
-  serif: "LXGW WenKai TC"
-  mono: "JetBrains Mono"
 transition: slide-left
 mdc: true
 overviewSnapshots: true
