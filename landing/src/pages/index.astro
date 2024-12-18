@@ -2,26 +2,31 @@
 import { readdirSync, readFileSync } from "node:fs";
 import Base from "../layouts/main.astro";
 import Button from "../components/Button.astro";
+import fm from "front-matter";
 
 import { Icon } from "astro-icon/components";
 
-const presentations: {path: string, desc: string}[] = [];
+const presentations: {path: string, title: string, desc: string}[] = [];
 
 const presentationDirs = readdirSync("../presentations");
 
 for (let i = 0; i < presentationDirs.length; i++) {
   const data = readFileSync(`../presentations/${presentationDirs[i]}/package.json`, "utf-8");
+  const { attributes } = fm<Record<string, string>>(readFileSync(`../presentations/${presentationDirs[i]}/slides.md`, "utf-8"));
+
   presentations.push({
     path: presentationDirs[i],
-    desc: JSON.parse(data).description,
+    title: attributes.title,
+    desc: attributes.info,
   })
 }
 ---
 
 <Base>
   <section>
-    <p class="py-6 text-3xl font-extrabold md:text-4xl">Presentations</p>
+    <p class="py-8 text-3xl font-extrabold md:text-4xl">Presentations</p>
     <p class="pt-2 text-md md:text-lg">Here's a full list of presentations that I've given.</p>
+    <p class="pt-4 text-sm text-gray-300">Note that some (actually most) presentations are written in Chinese</p>
   </section>
 
   <section class="py-7">
@@ -32,8 +37,9 @@ for (let i = 0; i < presentationDirs.length; i++) {
             href={`/${item.path}`}
             class="border-2 border-gray-600 bg-gray-800 p-4 rounded-md duration-300 hover:border-gray-400"
           >
-            <p class="text-lg md:text-xl font-extrabold">{item.path}</p>
+            <p class="text-lg md:text-xl font-extrabold">{item.title}</p>
             <p class="pt-4 text-md">{item.desc}</p>
+            <p class="pt-3 text-gray-500 text-sm">{"/" + item.path}</p>
           </a>
         ))
       }
