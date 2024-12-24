@@ -534,3 +534,101 @@ layout: cover
 點下 `Go Live` 後，你的瀏覽器應該會自動開啟，並且顯示你剛剛製作出的 HTML 文件。
 
 <img src="/images/html-demo-1.png" class="aspect-auto h-96 mx-auto">
+
+---
+
+## 改變一下標題的顏色
+
+現在我們來試著改變一下標題的顏色，請在你的 HTML 文件中加入這段 CSS：
+
+````md magic-move
+```html
+<body>
+  <h1>今天天氣超級好</h1>
+</body>
+```
+
+```html{4-8}
+<body>
+  <h1>今天天氣超級好</h1>
+
+  <style>
+    h1 {
+      color: blue;
+    }
+  </style>
+</body>
+```
+
+```html
+<style>
+  h1 {
+    color: blue;
+  }
+</style>
+```
+````
+
+<v-click>
+
+這段 CSS 會將所有的 `h1` 標籤的文字顏色設定為藍色，存檔後，重新整理你的網頁，你應該會看到標題變成藍色了。
+
+<img src="/images/html-demo-color-css.png" class="aspect-auto h-36">
+
+</v-click>
+
+---
+
+## 加入一些圖片
+
+現在我們來試著加入一張圖片。請你找到一張你喜歡的圖片，打開你最一開始的專案資料夾，將你的圖片放進去。
+
+<v-click>
+
+放進去之後請把那張圖片**重新命名**成 `image.jpg`，接著我們來編輯我們的 HTML 文件：
+
+````md magic-move
+```html
+<body>
+  <h1>今天天氣超級好</h1>
+
+  <style>
+    h1 {
+      color: blue;
+    }
+  </style>
+</body>
+```
+
+```html{3}
+<body>
+  <h1>今天天氣超級好</h1>
+  <img src="/image.jpg">
+
+  <style>
+    h1 {
+      color: blue;
+    }
+  </style>
+</body>
+```
+````
+
+接著重新整理你的網頁，你應該會看到你的圖片出現在你的網頁上。
+
+</v-click>
+
+---
+layout: cover
+---
+
+# 簡報結束
+
+
+- - -
+
+<small>
+  Website: https://wolf-yuan.dev
+  <br>
+  Instagram: <code>wolf.yuan</code>
+</small>
