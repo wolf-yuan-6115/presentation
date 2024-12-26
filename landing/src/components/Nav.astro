@@ -6,9 +6,9 @@ import avatarImage from "../assets/transparent_64x64.png";
 ---
 
 <nav
-  class="sticky top-0 z-10 flex justify-center backdrop-blur-lg duration-300 backdrop-brightness-75"
+  class="sticky from-gray-950/90 to-transparent bg-gradient-to-b top-0 z-10 flex justify-center backdrop-blur-sm duration-300"
 >
-  <div class="w-[72rem] px-5 py-4 duration-300">
+  <div class="max-w-7xl w-full px-5 py-4 duration-300">
     <div class="grid grid-cols-2">
       <div class="col-start-1 col-end-2">
         <div class="flex flex-row items-center gap-4">
@@ -72,43 +72,3 @@ import avatarImage from "../assets/transparent_64x64.png";
     </div>
   </div>
 </nav>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    let navContainer = document.getElementsByClassName("js:nav-container")[0];
-    let navPaddingArea = document.getElementsByClassName("js:nav-padding")[0];
-    let navTitleElement = document.getElementsByClassName("js:nav-title")[0];
-    let currentState = false;
-
-    let handelScroll = (state: boolean) => {
-      if (state) {
-        navContainer.classList.add("backdrop-brightness-75");
-
-        navPaddingArea.classList.add("py-4");
-        navPaddingArea.classList.remove("py-6");
-
-        navTitleElement.classList.add("sm:opacity-100");
-        navTitleElement.classList.remove("sm:opacity-0");
-      } else {
-        navContainer.classList.remove("backdrop-brightness-75");
-
-        navPaddingArea.classList.add("py-6");
-        navPaddingArea.classList.remove("py-4");
-
-        navTitleElement.classList.add("sm:opacity-0");
-        navTitleElement.classList.remove("sm:opacity-100");
-      }
-    };
-
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 52) {
-        if (currentState) return;
-        currentState = true;
-        handelScroll(true);
-      } else if (currentState) {
-        currentState = false;
-        handelScroll(false);
-      }
-    });
-  });
-</script>
