@@ -15,7 +15,7 @@ sorting: 1
 
 ---
 
-<QRCodeWrapper></QRCodeWrapper>
+<QRCodeWrapper href="clhs-autolearning-rust"></QRCodeWrapper>
 
 ---
 

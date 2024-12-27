@@ -19,7 +19,7 @@ sorting: 0
 
 ---
 
-<QRCodeWrapper></QRCodeWrapper>
+<QRCodeWrapper href="clcs-1st-html-basic"></QRCodeWrapper>
 
 ---
 
