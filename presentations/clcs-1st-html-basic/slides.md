@@ -624,11 +624,12 @@ layout: cover
 
 # 簡報結束
 
-
 - - -
 
 <small>
-  Website: https://wolf-yuan.dev
+  Website: <a href="https://wolf-yuan.dev">wolf-yuan.dev</a>
   <br>
   Instagram: <code>wolf.yuan</code>
+  <br>
+  Fully open sourced! Visit <a href="https://gitlab.com/wolf-yuan/presentation/">wolf-yuan/presentation on GitLab</a>
 </small>
