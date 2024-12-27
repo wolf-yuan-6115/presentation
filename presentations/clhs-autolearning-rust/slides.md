@@ -2,12 +2,13 @@
 theme: theme
 background: /background.jpg
 title: Rust 自主學習成果
-info: 介紹什麼是 Rust 程式語言，以及為什麼它十分重要
+info: 高二上的自主學習計畫報告。介紹什麼是 Rust 程式語言，為什麼我想學它，還有它到底多優雅 ✨
 drawings:
   persist: false
 transition: slide-left
 mdc: true
 overviewSnapshots: true
+sorting: 1
 ---
 
 # Rust 自主學習成果

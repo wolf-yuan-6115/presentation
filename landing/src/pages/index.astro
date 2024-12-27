@@ -6,27 +6,48 @@ import fm from "front-matter";
 
 import { Icon } from "astro-icon/components";
 
-const presentations: {path: string, title: string, desc: string}[] = [];
+const presentations: { path: string; title: string; desc: string }[] =
+  [];
 
 const presentationDirs = readdirSync("../presentations");
 
 for (let i = 0; i < presentationDirs.length; i++) {
-  const data = readFileSync(`../presentations/${presentationDirs[i]}/package.json`, "utf-8");
-  const { attributes } = fm<Record<string, string>>(readFileSync(`../presentations/${presentationDirs[i]}/slides.md`, "utf-8"));
+  const data = readFileSync(
+    `../presentations/${presentationDirs[i]}/package.json`,
+    "utf-8",
+  );
+  const { attributes } = fm<Record<string, string>>(
+    readFileSync(
+      `../presentations/${presentationDirs[i]}/slides.md`,
+      "utf-8",
+    ),
+  );
 
   presentations.push({
     path: presentationDirs[i],
     title: attributes.title,
     desc: attributes.info,
-  })
+    sorting: parseInt(attributes.sorting),
+  });
 }
+
+presentations.sort((a, b) => {
+  return b.sorting - a.sorting;
+});
 ---
 
 <Base>
   <section>
-    <p class="py-8 text-3xl font-extrabold md:text-4xl">Presentations</p>
-    <p class="pt-2 text-md md:text-lg">Here's a full list of presentations that I've given.</p>
-    <p class="pt-4 text-sm text-gray-300">Note that some (actually most) presentations are written in Chinese</p>
+    <p class="py-8 text-3xl font-extrabold md:text-4xl">
+      Presentations
+    </p>
+    <p class="text-md pt-2 md:text-lg">
+      Here's a full list of presentations that I've given.
+    </p>
+    <p class="pt-4 text-sm text-gray-300">
+      Note that some (actually most) presentations are written in
+      Chinese
+    </p>
   </section>
 
   <section class="py-7">
@@ -35,11 +56,15 @@ for (let i = 0; i < presentationDirs.length; i++) {
         presentations.map((item) => (
           <a
             href={`/${item.path}`}
-            class="border-2 border-gray-600 bg-gray-800 p-4 rounded-md duration-300 hover:border-gray-400"
+            class="rounded-md border-2 border-gray-600 bg-gray-800 p-4 duration-300 hover:border-gray-400"
           >
-            <p class="text-lg md:text-xl font-extrabold">{item.title}</p>
-            <p class="pt-4 text-md">{item.desc}</p>
-            <p class="pt-3 text-gray-500 text-sm">{"/" + item.path}</p>
+            <p class="text-lg font-extrabold md:text-xl">
+              {item.title}
+            </p>
+            <p class="text-md pt-4">{item.desc}</p>
+            <p class="pt-3 text-sm text-gray-500">
+              {"/" + item.path}
+            </p>
           </a>
         ))
       }
@@ -47,7 +72,9 @@ for (let i = 0; i < presentationDirs.length; i++) {
   </section>
 
   <section class="py-8">
-    <p class="pb-4 md:pb-0 self-center text-center text-xl font-semibold md:text-2xl">
+    <p
+      class="self-center pb-4 text-center text-xl font-semibold md:pb-0 md:text-2xl"
+    >
       Want to see more?
     </p>
 
@@ -61,7 +88,7 @@ for (let i = 0; i < presentationDirs.length; i++) {
         class="inline"
       />
       <p class="md:text-md inline text-sm">
-      Check out my main website
+        Check out my main website
       </p>
     </Button>
   </section>

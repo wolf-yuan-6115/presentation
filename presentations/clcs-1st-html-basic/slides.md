@@ -2,12 +2,13 @@
 theme: theme
 background: /background.jpg
 title: 搞個網頁
-info: 酷酷的網頁基礎介紹
+info: 製作給電腦科學社的教學，基本上是酷酷的網頁基礎介紹
 drawings:
   persist: false
 transition: slide-left
 mdc: true
 overviewSnapshots: true
+sorting: 0
 ---
 
 # 搞個網頁
