@@ -16,7 +16,7 @@
       "fonts": {
         "sans": "LXGW WenKai TC",
         "serif": "LXGW WenKai TC",
-        "mono": "JetBrains Mono"
+        "mono": "JetBrains Mono, Noto Sans TC"
       },
       "themeConfig": {
         "primary": "#818cf8"
