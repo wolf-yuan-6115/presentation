@@ -13,6 +13,10 @@ sorting: 1
 
 # Rust 自主學習成果
 
+- - -
+
+<small>Presented by **Wolf Yuan**</small>
+
 ---
 
 <QRCodeWrapper href="clhs-autolearning-rust"></QRCodeWrapper>
