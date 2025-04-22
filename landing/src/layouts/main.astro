@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/jetbrains-mono/wght.css";
+import "../styles/global.css";
 
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
@@ -7,7 +8,11 @@ import { ViewTransitions } from "astro:transitions";
 import { SEO } from "astro-seo";
 ---
 
-<html lang={Astro.currentLocale === "en" ? "en" : "zh-Hant"} transition:name="root" transition:animate="none">
+<html
+  lang={Astro.currentLocale === "en" ? "en" : "zh-Hant"}
+  transition:name="root"
+  transition:animate="none"
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -21,11 +26,12 @@ import { SEO } from "astro-seo";
           title: "Presentations - Wolf Yuan",
           type: "website",
           image: "https://wolf-yuan.dev/logo_512x512.webp",
-        }
+        },
       }}
       twitter={{
         title: "Presentations - Wolf Yuan",
-        description: "Presentations I have given in the past, all of them was built with Slidev & heart",
+        description:
+          "Presentations I have given in the past, all of them was built with Slidev & heart",
         card: "summary",
         site: "@wolfyuan1135",
         image: "https://wolf-yuan.dev/logo_512x512.webp",
@@ -33,10 +39,14 @@ import { SEO } from "astro-seo";
     />
   </head>
   <body class="bg-gray-900 text-gray-50">
-    <div class="h-screen flex flex-col">
+    <div class="flex h-screen flex-col">
       <Nav />
 
-      <div class="mx-auto mb-auto max-w-7xl w-screen" transition:name="content" transition:animate="fade">
+      <div
+        class="mx-auto mb-auto w-screen max-w-7xl"
+        transition:name="content"
+        transition:animate="fade"
+      >
         <div class="mx-7">
           <slot />
         </div>

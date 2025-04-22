@@ -1,4 +1,10 @@
 packages:
-  - "landing"
-  - "theme"
-  - "presentations/*"
+  - landing
+  - theme
+  - presentations/*
+
+onlyBuiltDependencies:
+  - esbuild
+  - playwright-chromium
+  - sharp
+  - vue-demi
