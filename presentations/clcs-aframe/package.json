@@ -1,0 +1,17 @@
+{
+  "name": "clhs-autolearning-rust",
+  "description": "A presentation about my learning path of Rust, basically just describing what is Rust",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build --base /clhs-autolearning-rust/",
+    "dev": "slidev",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^51.6.0",
+    "qrcode.vue": "^3.6.0",
+    "theme": "workspace:^",
+    "vue": "^3.5.13"
+  }
+}
