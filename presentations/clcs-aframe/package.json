@@ -1,10 +1,10 @@
 {
-  "name": "clhs-aframe",
+  "name": "clcs-aframe",
   "description": "A presentation about my learning path of Rust, basically just describing what is Rust",
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /clhs-autolearning-rust/",
+    "build": "slidev build --base /clcs-aframe/",
     "dev": "slidev",
     "export": "slidev export"
   },
