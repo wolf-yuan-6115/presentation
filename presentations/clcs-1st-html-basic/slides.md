@@ -410,9 +410,7 @@ layout: cover
 
 講了那麼多，這時候我們該來一些實作了！
 
-這堂課會使用 Visual Studio Code (以下簡稱 VSCode) 來編輯 HTML、CSS 跟 JavaScript，請在你的桌面上找到這個：
-
-// TODO: Add VSCode screenshot
+這堂課會使用 Visual Studio Code (以下簡稱 VSCode) 來編輯 HTML、CSS 跟 JavaScript，請在你的桌面上找到一個看起來像是無限符號的程式
 
 請點兩下來打開它
 
