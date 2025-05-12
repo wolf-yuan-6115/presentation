@@ -12,7 +12,6 @@ fonts:
   sans: Space Mono
   serif: Space Mono
   mono: JetBrains Mono
-  provider: coollabs
 sorting: 3
 ---
 
