@@ -4,6 +4,7 @@ packages:
   - presentations/*
 
 onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
   - esbuild
   - playwright-chromium
   - sharp
