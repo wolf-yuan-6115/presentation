@@ -143,10 +143,6 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 
-### Slidev excludes ###
-
-.slidev
-**/*.pdf
-
-### Turborepo ###
-.turbo
+.astro/
+playwright-report/
+test-results/

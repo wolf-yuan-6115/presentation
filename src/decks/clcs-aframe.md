@@ -41,6 +41,8 @@ Here's something I'm currently doing or done:
 
 ## Coding experience
 
+<!-- .slide: class="dense" -->
+
 I primarily work on these languages:
 
 - Frontend:
@@ -67,6 +69,8 @@ We will be using a framework called **A-Frame** to build the website.
 ---
 
 ## Jump into the code, yay!
+
+<!-- .slide: class="dense" -->
 
 Please open a folder inside Visual Studio Code.
 
@@ -173,6 +177,8 @@ If **_nothing went wrong_**, you should see some 3D objects in your web browser.
 
 ## Checkpoint!
 
+<!-- .slide: class="dense" -->
+
 At this point you should have:
 
 - A working A-Frame website
@@ -272,6 +278,8 @@ Now, let's add a box to our world.
 
 ## Customizing the box
 
+<!-- .slide: class="dense" -->
+
 We now have a box inside our world, but how can we change its color, size and position?
 
 <pre><code class="language-html" data-trim data-line-numbers="">&lt;a-box position=&quot;0 1 -3&quot; rotation=&quot;0 45 0&quot; color=&quot;#4CC3D2&quot;&gt;&lt;/a-box&gt;
@@ -290,6 +298,8 @@ After changing `color` to `#00FF00`, position to `0 0 0`, you should see a green
 ---
 
 ## Checkpoint!
+
+<!-- .slide: class="dense" -->
 
 At this point you should have:
 

@@ -129,6 +129,8 @@ JavaScript 跟你學過的 C 類型語言其實有點相近，這是一段會在
 
 ## HTML 的基本結構
 
+<!-- .slide: class="dense" -->
+
 網頁最基礎的元件就是 HTML，它掌管了整個網頁的架構，鏈接了 CSS 跟 JavaScript。
 
 HTML 是由一個個的標籤 (Tag) 組成的，這些標籤會告訴瀏覽器這個元素是什麼，它們以 `<` `>` 包起來，例如：
@@ -148,6 +150,8 @@ HTML 是由一個個的標籤 (Tag) 組成的，這些標籤會告訴瀏覽器�
 ---
 
 ## 怎麼用標籤把這三個元素組合在一起？
+
+<!-- .slide: class="dense" -->
 
 這時候我們就可以用 HTML 來把這三個元素組合在一起，我們可以用一個十分基礎的 HTML 文件來看看：
 
@@ -180,6 +184,8 @@ HTML 是由一個個的標籤 (Tag) 組成的，這些標籤會告訴瀏覽器�
 
 ## 怎麼用標籤把這三個元素組合在一起？
 
+<!-- .slide: class="dense" -->
+
 這時候我們就可以用 HTML 來把這三個元素組合在一起，我們可以用一個十分基礎的 HTML 文件來看看：
 
 <pre data-id="code"><code class="language-html" data-trim data-line-numbers="2-13">  &lt;body&gt;
@@ -201,6 +207,8 @@ HTML 是由一個個的標籤 (Tag) 組成的，這些標籤會告訴瀏覽器�
 
 ## HTML 中的特殊標籤
 
+<!-- .slide: class="dense" -->
+
 HTML 有一些比較特別的標籤：
 
 - `<!DOCTYPE html>`: 告訴瀏覽器這是一個 HTML 文件
@@ -215,6 +223,8 @@ HTML 有一些比較特別的標籤：
 ---
 
 ## HTML 的(一般)標籤
+
+<!-- .slide: class="dense" -->
 
 ### 活在 body 裡面的標籤
 
@@ -247,6 +257,8 @@ HTML 有一些比較特別的標籤：
 
 ## CSS 的選擇器
 
+<!-- .slide: class="dense" -->
+
 CSS 的選擇器是用來選擇要套用樣式的元素，這時就要講到 HTML 的 ID 跟 Class 了。通常 ID 用來選擇唯一的元素 (常用於 JavaScript 中)，而 Class 則是用來選擇一群元素 (常用於 CSS 中)。
 
 例如我們現在有一個 `h1` 的標題標籤，我們可以這樣做讓它有 ID 或是 class：
@@ -261,6 +273,8 @@ CSS 的選擇器是用來選擇要套用樣式的元素，這時就要講到 HTM
 
 ## CSS 的選擇器
 
+<!-- .slide: class="dense" -->
+
 CSS 的選擇器是用來選擇要套用樣式的元素，這時就要講到 HTML 的 ID 跟 Class 了。通常 ID 用來選擇唯一的元素 (常用於 JavaScript 中)，而 Class 則是用來選擇一群元素 (常用於 CSS 中)。
 
 例如我們現在有一個 `h1` 的標題標籤，我們可以這樣做讓它有 ID 或是 class：
@@ -272,6 +286,8 @@ CSS 的選擇器是用來選擇要套用樣式的元素，這時就要講到 HTM
 <!-- .slide: data-auto-animate data-auto-animate-id="ca055447" -->
 
 ## CSS 的選擇器
+
+<!-- .slide: class="dense" -->
 
 CSS 的選擇器是用來選擇要套用樣式的元素，這時就要講到 HTML 的 ID 跟 Class 了。通常 ID 用來選擇唯一的元素 (常用於 JavaScript 中)，而 Class 則是用來選擇一群元素 (常用於 CSS 中)。
 
@@ -300,6 +316,8 @@ CSS 的選擇器就是用來指定要選擇哪個標籤，它可以以 `.ID 名`
 ---
 
 ## CSS 的神奇之處
+
+<!-- .slide: class="dense" -->
 
 其實從剛剛的範例來看，你會發現 CSS 多個選擇器可以同時選擇到一個元素，這時就會有一個問題：**選擇器的優先順序**。
 
@@ -345,6 +363,8 @@ CSS 的選擇器有一個優先順序，這個優先順序是由高到低：
 
 ## JavaScript 的基本語法
 
+<!-- .slide: class="dense" -->
+
 學過了這些靜態網站的基礎，我們怎麼可以跳過這個最特別的 JavaScript 呢？
 
 JavaScript 是一個動態的程式語言，它可以做很多事情，它有著*類似* C 語言的語法，又有著 Python 的動態型別，可說是~~夢想中的程式語言~~。
@@ -367,6 +387,8 @@ JavaScript 是一個動態的程式語言，它可以做很多事情，它有著
 
 ## JavaScript 的基本語法
 
+<!-- .slide: class="dense" -->
+
 學過了這些靜態網站的基礎，我們怎麼可以跳過這個最特別的 JavaScript 呢？
 
 JavaScript 是一個動態的程式語言，它可以做很多事情，它有著*類似* C 語言的語法，又有著 Python 的動態型別，可說是~~夢想中的程式語言~~。
@@ -386,6 +408,8 @@ JavaScript 是一個動態的程式語言，它可以做很多事情，它有著
 <!-- .slide: data-auto-animate data-auto-animate-id="b10f5031" -->
 
 ## JavaScript 的基本語法
+
+<!-- .slide: class="dense" -->
 
 學過了這些靜態網站的基礎，我們怎麼可以跳過這個最特別的 JavaScript 呢？
 

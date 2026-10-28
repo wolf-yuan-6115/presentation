@@ -2,6 +2,5 @@ pnpm-lock.yaml
 dist/
 node_modules/
 .astro/
-presentations/
-theme/
-landing/
+playwright-report/
+test-results/
