@@ -14,8 +14,8 @@ body.presentation {
 }
 .reveal {
   font-family: "LXGW WenKai TC", sans-serif;
-  font-size: 28px;
-  line-height: 1.5;
+  font-size: 24px;
+  line-height: 1.4;
   --r-background-color: var(--mocha-base);
   --r-main-color: var(--mocha-text);
   --r-link-color: var(--mocha-accent);
@@ -50,7 +50,7 @@ body.presentation {
   font-size: 1.2em;
 }
 .reveal p {
-  margin: 18px 0;
+  margin: 14px 0;
 }
 .reveal ul,
 .reveal ol {
@@ -58,7 +58,7 @@ body.presentation {
   padding-left: 1.4em;
 }
 .reveal li {
-  margin: 6px 0;
+  margin: 4px 0;
 }
 .reveal a {
   color: var(--mocha-accent);
@@ -110,7 +110,7 @@ body.presentation {
 }
 .reveal pre code {
   padding: 16px;
-  max-height: 490px;
+  max-height: 400px;
   overflow: auto;
   border-radius: 6px;
   background: var(--mocha-mantle);
@@ -261,4 +261,8 @@ body.presentation {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.reveal .controls {
+  color: var(--mocha-accent);
 }

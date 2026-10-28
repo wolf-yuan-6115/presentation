@@ -10,7 +10,7 @@ font: wenkai
 
 # Rust 自主學習成果
 
----
+<hr>
 
 <small>Presented by **Wolf Yuan**</small>
 
@@ -33,7 +33,7 @@ font: wenkai
 1. 瞭解 Rust 程式語言的基本語法
 2. 使用 `serenity` 製作由 Rust 製作的 Discord 機器人
 
----
+<hr>
 
 實際執行結果：
 
@@ -52,7 +52,7 @@ font: wenkai
 
 我們可以先看看這個各位都熟悉的 C++ 程式
 
-<!-- .slide: data-auto-animate -->
+<!-- .slide: data-auto-animate data-auto-animate-id="42bd084e" -->
 
 <pre data-id="code"><code class="language-cpp" data-trim data-line-numbers="">#include &lt;iostream&gt;
 using namespace std;
@@ -64,7 +64,7 @@ int main() {
 
 ---
 
-<!-- .slide: data-auto-animate -->
+<!-- .slide: data-auto-animate data-auto-animate-id="42bd084e" -->
 
 ## 基本的模版
 
@@ -88,7 +88,7 @@ fn main() {
 
 在 C++ 或是各大語言中，變數宣告後預設還可以改變它的值，但在 Rust 裡面，這個比較不一樣：
 
-<!-- .slide: data-auto-animate -->
+<!-- .slide: data-auto-animate data-auto-animate-id="d5c97558" -->
 
 <pre data-id="code"><code class="language-rust" data-trim data-line-numbers="">use std::io;
 
@@ -103,7 +103,7 @@ fn main() {
 
 ---
 
-<!-- .slide: data-auto-animate -->
+<!-- .slide: data-auto-animate data-auto-animate-id="d5c97558" -->
 
 ## Rust 特別的地方
 
@@ -165,7 +165,7 @@ Rust 的編譯器會告訴你這個程式碼哪裡會出問題，甚至提供解
 
 然後就搞一個基本的程式：
 
-<!-- .slide: data-auto-animate -->
+<!-- .slide: data-auto-animate data-auto-animate-id="ab0a5c63" -->
 
 <pre data-id="code"><code class="language-rust" data-trim data-line-numbers="">use std::env;
 
@@ -175,7 +175,7 @@ use serenity::prelude::*;</code></pre>
 
 ---
 
-<!-- .slide: data-auto-animate -->
+<!-- .slide: data-auto-animate data-auto-animate-id="ab0a5c63" -->
 
 ## 使用 Serenity
 
@@ -265,7 +265,7 @@ async fn main() {
 
 # 簡報結束
 
----
+<hr>
 
 <small>
   Website: <a href="https://wolf-yuan.dev">wolf-yuan.dev</a>
