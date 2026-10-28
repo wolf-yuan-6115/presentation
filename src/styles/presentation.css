@@ -110,22 +110,48 @@ body.presentation {
 }
 .reveal pre code {
   display: block;
-  padding: 16px;
+  padding: 12px;
   max-height: 400px;
   overflow: auto;
   border-radius: 6px;
   background: var(--mocha-mantle);
 }
-.reveal table {
+.reveal table:not(.hljs-ln) {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.85em;
 }
-.reveal th,
-.reveal td {
+.reveal table:not(.hljs-ln) th,
+.reveal table:not(.hljs-ln) td {
   text-align: left;
   border-bottom: 1px solid var(--mocha-surface);
   padding: 10px;
+}
+/* Reveal animates these cells individually. Keep their geometry independent
+   of snippet length and of the presentation's ordinary table styles. */
+.reveal .hljs-ln {
+  width: auto;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: inherit;
+}
+.reveal .hljs-ln td {
+  padding: 0;
+  border: 0;
+}
+.reveal .hljs-ln .hljs-ln-numbers {
+  box-sizing: content-box;
+  width: 2ch;
+  min-width: 2ch;
+  max-width: 2ch;
+  padding-right: 0.75em;
+  text-align: right;
+  color: #9399b2;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+.reveal .hljs-ln .hljs-ln-code {
+  padding: 0;
 }
 .reveal img {
   display: block;

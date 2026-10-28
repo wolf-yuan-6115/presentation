@@ -93,3 +93,50 @@ test("homepage, 404 and shared runtime", async ({ page }) => {
   await page.goto("/404.html");
   await expect(page.getByText("404 Not Found")).toBeVisible();
 });
+
+test("animated code keeps a compact, stable line-number gutter", async ({
+  page,
+}) => {
+  await page.goto("/clhs-autolearning-rust/#/5");
+  await expect(page.locator(".reveal")).toHaveClass(/ready/);
+  await page.evaluate(() => document.fonts.ready);
+  await page.waitForTimeout(650);
+  const measure = () =>
+    page
+      .locator("section.present pre code")
+      .first()
+      .evaluate((code) => {
+        const cell =
+          code.querySelector<HTMLElement>(".hljs-ln-code")!;
+        const number = code.querySelector<HTMLElement>(
+          ".hljs-ln-numbers",
+        )!;
+        const scale =
+          code.getBoundingClientRect().width /
+          (code as HTMLElement).offsetWidth;
+        return {
+          inset:
+            (cell.getBoundingClientRect().left -
+              code.getBoundingClientRect().left) /
+            scale,
+          gutter: number.getBoundingClientRect().width / scale,
+          font: parseFloat(getComputedStyle(cell).fontSize),
+        };
+      });
+  const initial = await measure();
+  expect(initial.inset).toBeLessThan(initial.font * 4.5);
+  for (const direction of ["ArrowRight", "ArrowLeft"]) {
+    await page.keyboard.press(direction);
+    await page.waitForTimeout(100);
+    const during = await measure();
+    await page.waitForTimeout(550);
+    const after = await measure();
+    for (const state of [during, after]) {
+      expect(Math.abs(state.gutter - initial.gutter)).toBeLessThan(1);
+      expect(Math.abs(state.inset - initial.inset)).toBeLessThan(1);
+    }
+  }
+  await page.screenshot({
+    path: test.info().outputPath("code-gutter.png"),
+  });
+});
