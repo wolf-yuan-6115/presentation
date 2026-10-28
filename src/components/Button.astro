@@ -1,5 +1,12 @@
 ---
 import { twMerge } from "tailwind-merge";
+interface Props {
+  className?: string;
+  link: string;
+  target?: string;
+  glow?: boolean;
+  prefetch?: boolean | "hover" | "tap" | "viewport" | "load";
+}
 const { className, link, target, glow } = Astro.props;
 
 let prefetch = {};

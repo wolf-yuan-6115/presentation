@@ -1,0 +1,69 @@
+---
+import "reveal.js/reveal.css";
+import "@fontsource-variable/jetbrains-mono/wght.css";
+import "@fontsource/lxgw-wenkai-tc/400.css";
+import "@fontsource/space-mono/400.css";
+import "../styles/presentation.css";
+import QRCode from "../components/QRCode.astro";
+import type { Deck } from "../lib/deck";
+interface Props {
+  deck: Deck;
+}
+const { deck } = Astro.props;
+// A dedicated marker inserts the shared QR slide without mixing Astro into Markdown.
+const parts = deck.body.split(/^<!-- qr -->\s*$/m);
+---
+
+<!doctype html>
+<html lang={deck.language}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={deck.description} />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="canonical"
+      href={new URL(`/${deck.slug}/`, Astro.site)}
+    />
+    <title>{deck.title} - Wolf Yuan</title>
+  </head>
+  <body class:list={["presentation", `font-${deck.font}`]}>
+    <div class="reveal">
+      <div class="slides">
+        {
+          parts.map((part, index) => (
+            <>
+              {part.trim() && (
+                <section
+                  data-markdown
+                  data-separator="^---$"
+                  data-separator-notes="^Note:"
+                >
+                  <textarea data-template>{part}</textarea>
+                </section>
+              )}
+              {index < parts.length - 1 && (
+                <QRCode slug={deck.slug} language={deck.language} />
+              )}
+            </>
+          ))
+        }
+      </div>
+    </div>
+    <a
+      class="presentation-home"
+      href="/"
+      aria-label={deck.language === "en"
+        ? "All presentations"
+        : "所有簡報"}>←</a
+    >
+    <noscript
+      ><p>
+        JavaScript is required to present these slides.
+      </p></noscript
+    >
+    <script>
+      import "../scripts/presentation";
+    </script>
+  </body>
+</html>

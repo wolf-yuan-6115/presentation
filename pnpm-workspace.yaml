@@ -1,11 +1,6 @@
-packages:
-  - landing
-  - theme
-  - presentations/*
-
-onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - esbuild
-  - playwright-chromium
-  - sharp
-  - vue-demi
+verifyDepsBeforeRun: false
+allowBuilds:
+  "@tailwindcss/oxide": true
+  esbuild: true
+  sharp: true
+  workerd: true

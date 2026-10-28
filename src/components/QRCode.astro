@@ -1,0 +1,39 @@
+---
+import QRCode from "qrcode";
+interface Props {
+  slug: string;
+  language: "zh-Hant" | "en";
+}
+const { slug, language } = Astro.props;
+const url = new URL(`/${slug}/`, Astro.site).href;
+const svg = await QRCode.toString(url, {
+  type: "svg",
+  margin: 2,
+  color: { dark: "#cdd6f4", light: "#1e1e2e" },
+});
+const chinese = language === "zh-Hant";
+---
+
+<section class="qr-slide">
+  <div
+    class="qr-code"
+    role="img"
+    aria-label={chinese ? "簡報網址 QR code" : "Presentation QR code"}
+    set:html={svg}
+  />
+  <div>
+    <h2>{chinese ? "這個簡報可以線上檢視" : "It's online!"}</h2>
+    <p>
+      {chinese ? "掃描 QR code 或前往" : "Scan the QR code or visit"}
+    </p>
+    <a href={url}>{url}</a>
+    <p>
+      <small
+        >{
+          chinese
+            ? "建議使用網頁版查看動畫。"
+            : "View the web version for animations."
+        }</small>
+    </p>
+  </div>
+</section>

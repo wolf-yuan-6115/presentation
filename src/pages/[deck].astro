@@ -1,0 +1,13 @@
+---
+import { decks } from "../lib/decks";
+import Presentation from "../layouts/Presentation.astro";
+export function getStaticPaths() {
+  return decks.map((deck) => ({
+    params: { deck: deck.slug },
+    props: { deck },
+  }));
+}
+const { deck } = Astro.props;
+---
+
+<Presentation deck={deck} />

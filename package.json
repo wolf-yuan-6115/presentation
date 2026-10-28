@@ -7,20 +7,44 @@
     "email": "me@wolf-yuan.dev"
   },
   "private": true,
-  "workspaces": [
-    "landing",
-    "theme",
-    "presentations/*"
-  ],
-  "packageManager": "pnpm@10.9.0",
+  "packageManager": "pnpm@12.11.2",
   "scripts": {
-    "build": "turbo build",
-    "postbuild": "bash ./merge-slides.sh",
-    "dev": "turbo dev"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
+    "@astrojs/check": "latest",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^24.0.0",
+    "@types/qrcode": "^1.5.6",
     "prettier": "^3.6.2",
-    "turbo": "^2.5.4",
-    "wrangler": "^4.26.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-tailwindcss": "^0.6.13",
+    "typescript": "^6.0.3",
+    "wrangler": "latest"
+  },
+  "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.2.6",
+    "@fontsource/lxgw-wenkai-tc": "^5.3.1",
+    "@fontsource/space-mono": "^5.3.0",
+    "@iconify-json/material-symbols": "^1.2.28",
+    "@iconify-json/simple-icons": "^1.2.41",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.2",
+    "astro-icon": "^1.2.0",
+    "astro-seo": "^1.2.0",
+    "front-matter": "^4.0.2",
+    "qrcode": "^1.5.4",
+    "reveal.js": "^6.0.2",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "engines": {
+    "node": ">=24.17.0 <25"
   }
 }
