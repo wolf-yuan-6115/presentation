@@ -109,6 +109,8 @@ body.presentation {
   font-size: 0.85em;
 }
 .reveal pre code {
+  /* Auto-Animate sets height: 100%; include padding inside that height. */
+  box-sizing: border-box;
   display: block;
   padding: 12px;
   max-height: 400px;

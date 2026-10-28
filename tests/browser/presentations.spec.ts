@@ -140,3 +140,57 @@ test("animated code keeps a compact, stable line-number gutter", async ({
     path: test.info().outputPath("code-gutter.png"),
   });
 });
+
+test("long animated code can scroll its last line fully into view", async ({
+  page,
+}) => {
+  await page.goto("/clhs-autolearning-rust/#/12");
+  await expect(page.locator(".reveal")).toHaveClass(/ready/);
+  await page.evaluate(() => document.fonts.ready);
+  await page.waitForTimeout(650);
+  for (let round = 0; round < 2; round++) {
+    await page.keyboard.press("ArrowRight");
+    await expect(page).toHaveURL(/#\/13$/);
+    await page.waitForTimeout(650);
+    const code = page.locator("section.present pre code").first();
+    await code.hover();
+    await page.mouse.wheel(0, 3000);
+    await expect
+      .poll(() =>
+        code.evaluate(
+          (element) =>
+            element.scrollHeight -
+            element.clientHeight -
+            element.scrollTop,
+        ),
+      )
+      .toBeLessThanOrEqual(1);
+    const bounds = await code.evaluate((element) => {
+      const pre = element.parentElement!;
+      const last = element.querySelector("tr:last-child")!;
+      return {
+        preBottom: pre.getBoundingClientRect().bottom,
+        codeBottom: element.getBoundingClientRect().bottom,
+        lastBottom: last.getBoundingClientRect().bottom,
+        lastLine: last.textContent,
+        lineNumber: last
+          .querySelector(".hljs-ln-numbers")
+          ?.getAttribute("data-line-number"),
+      };
+    });
+    expect(bounds.lineNumber).toBe("19");
+    expect(bounds.lastLine).toBe("}");
+    expect(bounds.codeBottom).toBeLessThanOrEqual(
+      bounds.preBottom + 1,
+    );
+    expect(bounds.lastBottom).toBeLessThanOrEqual(
+      Math.min(bounds.codeBottom, bounds.preBottom) + 1,
+    );
+    if (round === 0)
+      await page.screenshot({
+        path: test.info().outputPath("code-last-line.png"),
+      });
+    await page.keyboard.press("ArrowLeft");
+    await page.waitForTimeout(650);
+  }
+});
