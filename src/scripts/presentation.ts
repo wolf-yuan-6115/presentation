@@ -2,12 +2,13 @@ import Reveal from "reveal.js";
 import Highlight from "reveal.js/plugin/highlight";
 import Markdown from "reveal.js/plugin/markdown";
 import Notes from "reveal.js/plugin/notes";
+import Mermaid from "./mermaid";
 
 const reducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
 const deck = new Reveal({
-  plugins: [Markdown, Highlight, Notes],
+  plugins: [Markdown, Mermaid, Highlight, Notes],
   hash: true,
   width: 1100,
   height: 700,

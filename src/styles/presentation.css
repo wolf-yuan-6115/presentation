@@ -212,6 +212,29 @@ body.presentation {
 .reveal .text-muted {
   color: var(--mocha-muted);
 }
+.mermaid-render-stage {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  width: 1100px;
+  visibility: hidden;
+  pointer-events: none;
+}
+.reveal .mermaid-diagram {
+  margin: 24px 0;
+  width: 100%;
+  text-align: center;
+}
+.reveal .mermaid-diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  margin-inline: auto;
+}
+.reveal .mermaid-error {
+  color: #f38ba8;
+}
 .presentation-home {
   position: fixed;
   left: 18px;
