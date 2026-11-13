@@ -99,6 +99,28 @@ Plain fenced code blocks work too. HTML code blocks allow explicit code identity
 
 Use `Note:` on its own line to start speaker notes. Press **S** for presenter view, **Esc** for overview, and arrow keys/space for navigation. Reduced-motion preferences disable transitions. Shared presentation classes include `cover`, `image-small`, `image-medium`, `image-tall`, `image-icon`, `image-narrow`, `image-center`, `text-small`, and `text-muted`.
 
+## Mermaid diagrams
+
+Use a fenced `mermaid` block in any deck:
+
+````md
+## Request and response
+
+```mermaid
+sequenceDiagram
+    accTitle: Request and response
+    accDescr: The browser requests data and the server returns JSON.
+    participant browser as Browser
+    participant server as Server
+    browser->>server: HTTP request
+    server-->>browser: JSON response
+```
+````
+
+Mermaid loads only for decks containing diagrams. Diagrams render after Markdown and before code highlighting and print layout, including slides that are not yet visible. They use the presentation's dark palette and font. Add `accTitle` and `accDescr` to describe a diagram for screen readers. Invalid diagrams keep their source visible with an error message so the rest of the presentation still works.
+
+Use successive slides to explain a request step by step; the standard navigation and reduced-motion settings still apply. Edit diagrams directly in the Markdown.
+
 ## Printing
 
 Open a deck with `?print-pdf`, for example `/my-talk/?print-pdf`. Wait for fonts/images, then use Chromium's Print → Save as PDF with landscape orientation, no margins, and background graphics enabled. Fragments print together in their final state. Automated PDF and PowerPoint exports are not included.
