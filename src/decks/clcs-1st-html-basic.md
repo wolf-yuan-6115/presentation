@@ -3,7 +3,6 @@ title: 搞個網頁
 description: 製作給電腦科學社的教學，基本上是酷酷的網頁基礎介紹
 order: 0
 language: zh-Hant
-font: wenkai
 ---
 
 <!-- .slide: class="cover" data-background-image="/decks/clcs-1st-html-basic/background.jpg" data-background-opacity="0.2" -->
@@ -91,7 +90,7 @@ font: wenkai
 
 那麼他會變成底下這個樣子：
 
-![上面程式碼的渲染結果](/decks/clcs-1st-html-basic/images/html-demo.png)
+<p><img data-src="/decks/clcs-1st-html-basic/images/html-demo.png" alt="上面程式碼的渲染結果"></p>
 
 > 不理解上面在幹什麼？我們等等會講到 HTML 到底是怎麼寫出來的，不要擔心
 
@@ -107,7 +106,7 @@ font: wenkai
 
 我的網頁就會變成這個樣子：
 
-![加上了 CSS 的渲染結果](/decks/clcs-1st-html-basic/images/css-demo.png)
+<p><img data-src="/decks/clcs-1st-html-basic/images/css-demo.png" alt="加上了 CSS 的渲染結果"></p>
 
 > 還是不理解上面在幹什麼？我們等等會講到 CSS 到底是怎麼寫出來的，不要擔心
 
@@ -357,7 +356,7 @@ CSS 的選擇器有一個優先順序，這個優先順序是由高到低：
 
 瀏覽器則會這樣顯示，因為 `#myHeadingTitle` 是目前優先順序最高的選擇器
 
-![加上了 CSS 的渲染結果](/decks/clcs-1st-html-basic/images/selector-demo.png)
+<p><img data-src="/decks/clcs-1st-html-basic/images/selector-demo.png" alt="加上了 CSS 的渲染結果"></p>
 
 ---
 
@@ -463,7 +462,7 @@ JavaScript 編寫上也有一個神奇的地方，也就是如果你有分行，
 
 接著切換到 VSCode，點擊左上角的 檔案 `->` 開啟資料夾，選擇剛剛創建的資料夾。
 
-<img src="/decks/clcs-1st-html-basic/images/vscode-open-folder.png" class="image-narrow">
+<img data-src="/decks/clcs-1st-html-basic/images/vscode-open-folder.png" class="image-narrow">
 
 ---
 
@@ -471,11 +470,11 @@ JavaScript 編寫上也有一個神奇的地方，也就是如果你有分行，
 
 請在 VSCode 的左邊找到 這個圖示：
 
-<img src="/decks/clcs-1st-html-basic/images/vscode-ext-icon.png" class="image-icon">
+<img data-src="/decks/clcs-1st-html-basic/images/vscode-ext-icon.png" class="image-icon">
 
 點一下它，你的側邊欄應該就會變成 VSCode 的擴充頁面，請搜尋 `Live Server`，並安裝搜尋到的第一個擴充
 
-<img src="/decks/clcs-1st-html-basic/images/vscode-ext-live-server.png" class="image-narrow">
+<img data-src="/decks/clcs-1st-html-basic/images/vscode-ext-live-server.png" class="image-narrow">
 
 如果你未來要使用 VSCode 開發，請**_慎選你用的擴充！_**
 
@@ -493,7 +492,7 @@ JavaScript 編寫上也有一個神奇的地方，也就是如果你有分行，
 
 接下來，請在你的 VSCode 找到這個按鈕：
 
-<img src="/decks/clcs-1st-html-basic/images/vscode-create-file.png" class="image-narrow">
+<img data-src="/decks/clcs-1st-html-basic/images/vscode-create-file.png" class="image-narrow">
 
 這個按鈕是拿來新增檔案的，請點一下它，並在底下的框框輸入檔名。
 
@@ -503,7 +502,7 @@ JavaScript 編寫上也有一個神奇的地方，也就是如果你有分行，
 
 你現在應該會有一個非常乾淨的編輯視窗
 
-<img src="/decks/clcs-1st-html-basic/images/vscode-init-file.png" class="image-tall image-center">
+<img data-src="/decks/clcs-1st-html-basic/images/vscode-init-file.png" class="image-tall image-center">
 
 ---
 
@@ -511,11 +510,11 @@ JavaScript 編寫上也有一個神奇的地方，也就是如果你有分行，
 
 請先輸入 `!`，VSCode 應該會顯示這個東西：
 
-<img src="/decks/shared/html-emmet-init.png" class="image-medium">
+<img data-src="/decks/shared/html-emmet-init.png" class="image-medium">
 
 按下 Enter 後，它應該會生成一個預設的 HTML 範本：
 
-<img src="/decks/clcs-1st-html-basic/images/html-emmet-init-done.png" class="image-small">
+<img data-src="/decks/clcs-1st-html-basic/images/html-emmet-init-done.png" class="image-small">
 
 ---
 
@@ -569,7 +568,7 @@ JavaScript 編寫上也有一個神奇的地方，也就是如果你有分行，
 
 現在我們需要將 VSCode 內建的 Live Server 啟動，請在視窗右下角找到這個寫著 `Go Live` 的按鈕：
 
-<img src="/decks/shared/vscode-live-server-start.png" class="image-small">
+<img data-src="/decks/shared/vscode-live-server-start.png" class="image-small">
 
 </div>
 
@@ -579,7 +578,7 @@ JavaScript 編寫上也有一個神奇的地方，也就是如果你有分行，
 
 點下 `Go Live` 後，你的瀏覽器應該會自動開啟，並且顯示你剛剛製作出的 HTML 文件。
 
-<img src="/decks/clcs-1st-html-basic/images/html-demo-1.png" class="image-tall image-center">
+<img data-src="/decks/clcs-1st-html-basic/images/html-demo-1.png" class="image-tall image-center">
 
 ---
 
@@ -629,7 +628,7 @@ JavaScript 編寫上也有一個神奇的地方，也就是如果你有分行，
 
 這段 CSS 會將所有的 `h1` 標籤的文字顏色設定為藍色，存檔後，重新整理你的網頁，你應該會看到標題變成藍色了。
 
-<img src="/decks/clcs-1st-html-basic/images/html-demo-color-css.png" class="image-small">
+<img data-src="/decks/clcs-1st-html-basic/images/html-demo-color-css.png" class="image-small">
 
 </div>
 

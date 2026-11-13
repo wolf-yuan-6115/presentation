@@ -6,7 +6,6 @@ const metadata = z.object({
   description: z.string().min(1),
   order: z.number().int(),
   language: z.enum(["zh-Hant", "en"]),
-  font: z.enum(["wenkai", "mono"]),
 });
 export type Deck = z.infer<typeof metadata> & {
   slug: string;

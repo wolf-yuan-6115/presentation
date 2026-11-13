@@ -9,11 +9,15 @@
 }
 body.presentation {
   margin: 0;
+  font-family: "Chiron GoRound TC Variable", sans-serif;
   background: var(--mocha-base);
   color: var(--mocha-text);
 }
+.reveal,
+.presentation .r-overlay {
+  font-family: inherit;
+}
 .reveal {
-  font-family: "LXGW WenKai TC", sans-serif;
   font-size: 24px;
   line-height: 1.4;
   --r-background-color: var(--mocha-base);
@@ -21,9 +25,6 @@ body.presentation {
   --r-link-color: var(--mocha-accent);
   --r-link-color-hover: #cba6f7;
   --r-selection-background-color: #585b70;
-}
-.font-mono .reveal {
-  font-family: "Space Mono", monospace;
 }
 .reveal .slides {
   text-align: left;
@@ -100,8 +101,17 @@ body.presentation {
   line-height: 1.45;
   tab-size: 2;
 }
-.reveal code {
-  font-family: "JetBrains Mono Variable", monospace;
+.reveal pre,
+.reveal code,
+.reveal kbd,
+.reveal samp,
+.reveal .slide-number,
+.reveal .speaker-notes,
+.reveal button,
+.reveal input,
+.reveal textarea,
+.reveal select {
+  font-family: inherit;
 }
 .reveal p code,
 .reveal li code {
@@ -258,7 +268,7 @@ body.presentation {
   bottom: 14px;
   z-index: 10;
   color: var(--mocha-muted);
-  font: 24px sans-serif;
+  font-size: 24px;
   text-decoration: none;
 }
 ::selection {

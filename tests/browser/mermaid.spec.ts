@@ -2,6 +2,44 @@ import { expect, test } from "@playwright/test";
 
 const deckURL = "/gdg-5th-cloud-build/";
 
+test("Mermaid does not auto-render while diagram fonts are loading", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    const load = document.fonts.load.bind(document.fonts);
+    document.fonts.load = (font, text) => {
+      if (!text?.includes("flowchart LR")) return load(font, text);
+      document.documentElement.dataset.diagramFontsPending = "true";
+      return new Promise((resolve, reject) => {
+        window.addEventListener(
+          "release-diagram-fonts",
+          () => load(font, text).then(resolve, reject),
+          { once: true },
+        );
+      });
+    };
+  });
+  await page.goto(`${deckURL}#/13`);
+  await expect(page.locator("html")).toHaveAttribute(
+    "data-diagram-fonts-pending",
+    "true",
+  );
+  // Exercise Mermaid's window-load hook while our renderer awaits fonts.
+  await page.evaluate(() => window.dispatchEvent(new Event("load")));
+  await expect(
+    page.locator("code.mermaid[data-processed]"),
+  ).toHaveCount(0);
+  await page.evaluate(() =>
+    window.dispatchEvent(new Event("release-diagram-fonts")),
+  );
+  await expect(page.locator(".reveal")).toHaveClass(/ready/);
+  await expect(page.locator(".mermaid-diagram svg")).toHaveCount(6);
+  await expect(page.locator(".mermaid-error")).toHaveCount(0);
+  await expect(
+    page.locator("section.present .mermaid-diagram svg"),
+  ).toBeVisible();
+});
+
 test("Mermaid renders hidden slides, navigation and print without overflow", async ({
   page,
 }) => {

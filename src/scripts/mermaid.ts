@@ -32,14 +32,19 @@ export default {
     try {
       const { default: mermaid } = await import("mermaid");
       const fontFamily = getComputedStyle(root).fontFamily;
-      await document.fonts.load(`24px ${fontFamily}`);
+      // Disable the window-load renderer before awaiting fonts, or it can
+      // replace our source blocks with SVG while this plugin is suspended.
       mermaid.initialize({
         startOnLoad: false,
         securityLevel: "strict",
         suppressErrorRendering: true,
         theme: "base",
+        look: "classic",
+        layout: "dagre",
+        htmlLabels: false,
         fontFamily,
         themeVariables: {
+          radius: 0,
           darkMode: true,
           background: "#1e1e2e",
           primaryColor: "#313244",
@@ -65,9 +70,13 @@ export default {
           noteBorderColor: "#b4befe",
           fontSize: "22px",
         },
-        flowchart: { htmlLabels: false, useMaxWidth: false },
+        flowchart: { useMaxWidth: false, wrappingWidth: 240 },
         sequence: { useMaxWidth: false, mirrorActors: false },
       });
+      await document.fonts.load(
+        `22px ${fontFamily}`,
+        blocks.map((code) => code.textContent ?? "").join("\n"),
+      );
 
       for (const [index, code] of blocks.entries()) {
         const pre = code.parentElement!;

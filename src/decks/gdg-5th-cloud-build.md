@@ -3,7 +3,6 @@ title: 讓你的網頁上雲端
 description: 認識前後端與網站部署方案，再用虛擬訂餐網站練習 Cloud Build 與 Cloud Run
 order: 5
 language: zh-Hant
-font: wenkai
 ---
 
 <!-- .slide: class="cover" data-background-image="/decks/gdg-5th-cloud-build/background.jpg" data-background-opacity="0.2" -->
@@ -180,6 +179,7 @@ flowchart LR
     accTitle: 在自己的電腦執行網站
     accDescr: 瀏覽器和伺服器都在自己的電腦內，透過 localhost 傳送請求與回應。
     subgraph localComputer["自己的電腦"]
+        direction LR
         browser["瀏覽器／前端"]
         server["伺服器程式／後端"]
         browser -->|"請求 localhost:3000"| server
@@ -317,7 +317,7 @@ flowchart LR
 
 每次自己做，可能會漏跑測試、拿錯版本，或忘記某個步驟。
 
-<img src="/decks/gdg-5th-cloud-build/images/mygo-tired.jpg" alt="MyGO 梗圖：每次想著想著就會感到很厭世" class="image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/mygo-tired.jpg" alt="MyGO 梗圖：每次想著想著就會感到很厭世" class="image-center">
 
 Note: 先講每次手動更新網站的麻煩，再搭配梗圖停一下。下一頁才介紹用 Cloud Build 自動執行這些步驟。梗圖來源：https://mygo.miyago9267.com/ 原始圖片：https://storageapi.miyago9267.com/f/8fa714b7-dca7-466b-bfe4-f021b7237384.jpg
 
@@ -388,7 +388,7 @@ Cloud Build 完成工作後就結束；使用者打開網站時，是由 Cloud R
 
 **這次練習的重點，是讓一個現成的網站上線，並能持續更新。**
 
-<img src="/decks/gdg-5th-cloud-build/images/01-food-demo.png" alt="點餐網站首頁：菜單、購物車與隨機選餐按鈕" class="image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/01-food-demo.png" alt="點餐網站首頁：菜單、購物車與隨機選餐按鈕" class="image-center">
 
 ---
 
@@ -432,7 +432,7 @@ Cloud Build 完成工作後就結束；使用者打開網站時，是由 Cloud R
 
 Fork 會在你的帳號底下建立一份副本，等等就能放心改自己的菜單。
 
-<img src="/decks/gdg-5th-cloud-build/images/02-create-fork.png" alt="GitHub Create fork：Owner、儲存庫名稱與建立按鈕" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/02-create-fork.png" alt="GitHub Create fork：Owner、儲存庫名稱與建立按鈕" class="image-medium image-center">
 
 Note: 參考：https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo 今天用 Fork 複製範本。後面連接 Cloud Build 時，要選學員自己的 fork。
 
@@ -452,7 +452,7 @@ Note: 參考：https://docs.github.com/en/pull-requests/how-tos/work-with-forks/
 - `Dockerfile`：打包網站的做法
 - `cloudbuild.yaml`：檢查、建置、推送和部署的順序
 
-<img src="/decks/gdg-5th-cloud-build/images/03-fork-files.png" alt="自己的 GitHub Fork 與範本檔案列表" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/03-fork-files.png" alt="自己的 GitHub Fork 與範本檔案列表" class="image-medium image-center">
 
 ---
 
@@ -485,7 +485,7 @@ Note: 參考：https://docs.github.com/en/pull-requests/how-tos/work-with-forks/
 - 價格使用整數，例如 `100`，不要寫成 `"100元"`
 - 保留原本的大括號、中括號與逗號
 
-<img src="/decks/gdg-5th-cloud-build/images/04-edit-menu.png" alt="在 GitHub 編輯 config.json 的餐點名稱與價格" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/04-edit-menu.png" alt="在 GitHub 編輯 config.json 的餐點名稱與價格" class="image-medium image-center">
 
 ---
 
@@ -549,7 +549,7 @@ Note: 參考：https://docs.github.com/en/pull-requests/how-tos/work-with-forks/
 
 **Commit 就是記錄一次修改**，等等可以用它確認 Cloud Build 到底抓了哪個版本。
 
-<img src="/decks/gdg-5th-cloud-build/images/05-commit-menu.png" alt="GitHub Commit changes：提交訊息與目標分支" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/05-commit-menu.png" alt="GitHub Commit changes：提交訊息與目標分支" class="image-medium image-center">
 
 Note: 這時還沒建立 Trigger，這次 Commit 不會自動部署。課程示範直接改自己的預設分支，並不需要向原作者送 Pull Request。
 
@@ -577,7 +577,7 @@ Note: 這時還沒建立 Trigger，這次 Commit 不會自動部署。課程示�
 
 開始用 Google Cloud 建議先把語言改成英文
 
-<img src="/decks/gdg-5th-cloud-build/images/gcp-language.png" alt="Google Cloud Console 語言設定" class="image-large image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/gcp-language.png" alt="Google Cloud Console 語言設定" class="image-large image-center">
 
 ---
 
@@ -589,7 +589,7 @@ Note: 這時還沒建立 Trigger，這次 Commit 不會自動部署。課程示�
 - 記下 **Project ID**，不是顯示名稱，也不是 Project number
 - 後面看到 `你的專案ID`，都要換成這個值
 
-<img src="/decks/gdg-5th-cloud-build/images/06-project-id.png" alt="Google Cloud 專案 ID" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/06-project-id.png" alt="Google Cloud 專案 ID" class="image-medium image-center">
 
 今天區域統一用 **`us-central1`**，避免前後設定對不起來。
 
@@ -609,7 +609,7 @@ Note: 使用專用的示範專案，避免混到既有服務。us-central1 沿�
 - Cloud Logging API
 - **Cloud Resource Manager API**
 
-<img src="/decks/gdg-5th-cloud-build/images/07-enable-api.png" alt="啟用 Google Cloud API" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/07-enable-api.png" alt="啟用 Google Cloud API" class="image-medium image-center">
 
 Note: Secret Manager 用於 Cloud Build 的 GitHub connection 儲存授權資訊。參考：https://docs.cloud.google.com/build/docs/automating-builds/github/connect-repo-github 參考：https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run
 
@@ -632,7 +632,7 @@ Note: 參考：https://docs.cloud.google.com/artifact-registry/docs/repositories
 ---
 
 <div class="repository-screenshot">
-  <img src="/decks/gdg-5th-cloud-build/images/08-artifact-repository.png" alt="建立 Artifact Registry 儲存庫：Name、Docker 格式、Standard 模式、Region 位置類型與區域欄位">
+  <img data-src="/decks/gdg-5th-cloud-build/images/08-artifact-repository.png" alt="建立 Artifact Registry 儲存庫：Name、Docker 格式、Standard 模式、Region 位置類型與區域欄位">
 </div>
 
 ---
@@ -664,7 +664,7 @@ Google Cloud 會用 **Service Account（服務帳戶）**，讓程式以指定�
 food-demo-runtime@你的專案ID.iam.gserviceaccount.com
 ```
 
-<img src="/decks/gdg-5th-cloud-build/images/09-runtime-account.png" alt="建立 runtime 服務帳戶" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/09-runtime-account.png" alt="建立 runtime 服務帳戶" class="image-medium image-center">
 
 > 這裡把 food 打錯成 foot，記得不要照著打
 
@@ -685,7 +685,7 @@ Note: 參考：https://docs.cloud.google.com/iam/docs/service-accounts-create �
 
 完成後複製它的 Email，等等會用到。
 
-<img src="/decks/gdg-5th-cloud-build/images/10-build-account.png" alt="建立 build 服務帳戶與設定角色" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/10-build-account.png" alt="建立 build 服務帳戶與設定角色" class="image-medium image-center">
 
 Note: 角色 ID：roles/run.admin、roles/logging.logWriter。這是 starter 的示範權限配置。參考：https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run 參考：https://docs.cloud.google.com/build/docs/securing-builds/configure-user-specified-service-accounts
 
@@ -702,7 +702,7 @@ Note: 角色 ID：roles/run.admin、roles/logging.logWriter。這是 starter 的
 
 這代表建置帳戶可以在部署時，指定網站使用 runtime 帳戶。
 
-<img src="/decks/gdg-5th-cloud-build/images/12-runtime-permission.png" alt="授予 build 帳戶使用 runtime 身分的權限" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/12-runtime-permission.png" alt="授予 build 帳戶使用 runtime 身分的權限" class="image-medium image-center">
 
 > 這裡把 food 打錯成 foot，記得不要照著打
 
@@ -722,8 +722,8 @@ Note: 角色 ID：roles/iam.serviceAccountUser。這個角色要加在 runtime �
 儲存後，Cloud Build 才能把映像放進這個 Repository。
 
 <div class="image-flex"> 
-  <img src="/decks/gdg-5th-cloud-build/images/11-registry-permission-1.png" alt="Artifact Registry 儲存庫權限設定（畫面 1）" class="image-medium">
-  <img src="/decks/gdg-5th-cloud-build/images/11-registry-permission-2.png" alt="Artifact Registry 儲存庫權限設定（畫面 2）" class="image-medium">
+  <img data-src="/decks/gdg-5th-cloud-build/images/11-registry-permission-1.png" alt="Artifact Registry 儲存庫權限設定（畫面 1）" class="image-medium">
+  <img data-src="/decks/gdg-5th-cloud-build/images/11-registry-permission-2.png" alt="Artifact Registry 儲存庫權限設定（畫面 2）" class="image-medium">
 </div>
 
 Note: 角色 ID：roles/artifactregistry.writer。授權範圍是這個 Artifact Registry repository。參考：https://docs.cloud.google.com/artifact-registry/docs/access-control
@@ -760,8 +760,8 @@ Note: 角色 ID：roles/artifactregistry.writer。授權範圍是這個 Artifact
 點 Connect，依畫面完成 GitHub 授權與 Cloud Build GitHub App 安裝。
 
 <div class="image-flex"> 
-  <img src="/decks/gdg-5th-cloud-build/images/14-github-connection-1.png" alt="Cloud Build GitHub connection 設定（畫面 1）" class="image-medium">
-  <img src="/decks/gdg-5th-cloud-build/images/14-github-connection-2.png" alt="Cloud Build GitHub connection 設定（畫面 2）" class="image-medium">
+  <img data-src="/decks/gdg-5th-cloud-build/images/14-github-connection-1.png" alt="Cloud Build GitHub connection 設定（畫面 1）" class="image-medium">
+  <img data-src="/decks/gdg-5th-cloud-build/images/14-github-connection-2.png" alt="Cloud Build GitHub connection 設定（畫面 2）" class="image-medium">
 </div>
 Note: 參考：https://docs.cloud.google.com/build/docs/automating-builds/github/connect-repo-github Console 可能調整頁面位置或翻譯，請以 Cloud Build repositories 的第二代 GitHub connection 為準。本課程不使用 Cloud Source Repositories。
 
@@ -778,8 +778,8 @@ GitHub App 安裝時，Repository access 選 **Only select repositories**，勾�
 3. 點 **Link**
 
 <div class="image-flex"> 
-  <img src="/decks/gdg-5th-cloud-build/images/15-link-fork-1.png" alt="連結自己的 GitHub Fork（畫面 1）" class="image-medium">
-  <img src="/decks/gdg-5th-cloud-build/images/15-link-fork-2.png" alt="連結自己的 GitHub Fork（畫面 2）" class="image-medium">
+  <img data-src="/decks/gdg-5th-cloud-build/images/15-link-fork-1.png" alt="連結自己的 GitHub Fork（畫面 1）" class="image-medium">
+  <img data-src="/decks/gdg-5th-cloud-build/images/15-link-fork-2.png" alt="連結自己的 GitHub Fork（畫面 2）" class="image-medium">
 </div>
 
 Note: 參考：https://docs.cloud.google.com/build/docs/automating-builds/github/connect-repo-github Fork、GitHub App 安裝與 Link repository 是不同步驟。若選不到自己的 Fork，先檢查 App 的 Repository access。
@@ -794,7 +794,7 @@ Note: 參考：https://docs.cloud.google.com/build/docs/automating-builds/github
 
 在 Cloud Build 的 **Triggers** 頁面，點 **Create trigger**。
 
-<img src="/decks/gdg-5th-cloud-build/images/16-create-trigger.png" alt="建立 Cloud Build Trigger" class="image-medium">
+<img data-src="/decks/gdg-5th-cloud-build/images/16-create-trigger.png" alt="建立 Cloud Build Trigger" class="image-medium">
 
 Note: 參考：https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers GitHub 網頁直接 Commit 到分支會更新遠端分支，可觸發 push 類型的 Trigger。
 
@@ -815,13 +815,13 @@ Note: 參考：https://docs.cloud.google.com/build/docs/automating-builds/create
 ---
 
 <div class="image-flex"> 
-  <img src="/decks/gdg-5th-cloud-build/images/17-trigger-source-1.png" alt="Trigger 的來源儲存庫與分支設定（畫面 1）" class="image-medium">
-  <img src="/decks/gdg-5th-cloud-build/images/17-trigger-source-2.png" alt="Trigger 的來源儲存庫與分支設定（畫面 2）" class="image-medium">
+  <img data-src="/decks/gdg-5th-cloud-build/images/17-trigger-source-1.png" alt="Trigger 的來源儲存庫與分支設定（畫面 1）" class="image-medium">
+  <img data-src="/decks/gdg-5th-cloud-build/images/17-trigger-source-2.png" alt="Trigger 的來源儲存庫與分支設定（畫面 2）" class="image-medium">
 </div>
 
 Link repository 之後，再把它選回去
 
-<img src="/decks/gdg-5th-cloud-build/images/17-trigger-source-3.png" alt="Trigger 的來源儲存庫與分支設定（畫面 3）" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/17-trigger-source-3.png" alt="Trigger 的來源儲存庫與分支設定（畫面 3）" class="image-medium image-center">
 
 ---
 
@@ -835,7 +835,7 @@ Link repository 之後，再把它選回去
 
 這樣才會跑範本裡完整的檢查與部署流程。
 
-<img src="/decks/gdg-5th-cloud-build/images/18-trigger-config.png" alt="Trigger 建置設定檔與服務帳戶" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/18-trigger-config.png" alt="Trigger 建置設定檔與服務帳戶" class="image-medium image-center">
 
 Note: 不要選只根據 Dockerfile 建置的設定，否則不會執行範本的 check 與 deploy 步驟。部分介面以 /cloudbuild.yaml 顯示根目錄路徑。參考：https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers
 
@@ -871,7 +871,7 @@ Note: 巢狀 substitution 使用 `${PROJECT_ID}`，保留 YAML 的 dynamicSubsti
 
 這次會抓該分支目前的版本；之後新的 Commit 才會自動觸發。
 
-<img src="/decks/gdg-5th-cloud-build/images/19-run-trigger.png" alt="手動執行 Cloud Build Trigger" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/19-run-trigger.png" alt="手動執行 Cloud Build Trigger" class="image-medium image-center">
 
 ---
 
@@ -888,7 +888,7 @@ Note: 巢狀 substitution 使用 `${PROJECT_ID}`，保留 YAML 的 dynamicSubsti
 | `push`   | 上傳到 Artifact Registry   |
 | `deploy` | 更新 Cloud Run             |
 
-<img src="/decks/gdg-5th-cloud-build/images/20-build-steps.png" alt="Cloud Build 建置步驟與狀態" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/20-build-steps.png" alt="Cloud Build 建置步驟與狀態" class="image-medium image-center">
 
 ---
 
@@ -956,7 +956,7 @@ Note: 對照 starter 的 Dockerfile。容器合約參考：https://docs.cloud.go
 
 在 **Artifact Registry / food-demo** 裡，打開映像，就能查看版本與標籤。
 
-<img src="/decks/gdg-5th-cloud-build/images/21-image-tag.png" alt="Artifact Registry 映像標籤" class="image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/21-image-tag.png" alt="Artifact Registry 映像標籤" class="image-center">
 
 Note: 映像路徑由 \_REGION、$PROJECT_ID、\_REPOSITORY、\_SERVICE 與 $BUILD_ID 組成。GitHub repository 存原始碼，Artifact Registry repository 存建置產物。
 
@@ -987,13 +987,13 @@ Note: 設定來自 starter 的 cloudbuild.yaml。max-instances 不是帳單硬�
 
 你應該能看到剛剛在 GitHub 改過的菜單。
 
-<img src="/decks/gdg-5th-cloud-build/images/22-cloud-run-url-1.png" alt="Cloud Run 服務網址與部署結果（畫面 1）" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/22-cloud-run-url-1.png" alt="Cloud Run 服務網址與部署結果（畫面 1）" class="image-medium image-center">
 
 ---
 
 <!-- .slide: class="cover" -->
 
-<img src="/decks/gdg-5th-cloud-build/images/22-cloud-run-url-2.png" alt="Cloud Run 服務網址與部署結果（畫面 2）" class="image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/22-cloud-run-url-2.png" alt="Cloud Run 服務網址與部署結果（畫面 2）" class="image-center">
 
 ---
 
@@ -1014,8 +1014,8 @@ Note: 設定來自 starter 的 cloudbuild.yaml。max-instances 不是帳單硬�
 你會看到後端回傳的 JSON，前端就是拿這份資料更新畫面。
 
 <div class="image-flex">
-  <img src="/decks/gdg-5th-cloud-build/images/23-network-random-1.png" alt="瀏覽器 Network 面板的隨機選餐 API 請求（畫面 1）" class="image-medium image-center">
-  <img src="/decks/gdg-5th-cloud-build/images/23-network-random-2.png" alt="瀏覽器 Network 面板的隨機選餐 API 請求（畫面 2）" class="image-medium image-center">
+  <img data-src="/decks/gdg-5th-cloud-build/images/23-network-random-1.png" alt="瀏覽器 Network 面板的隨機選餐 API 請求（畫面 1）" class="image-medium image-center">
+  <img data-src="/decks/gdg-5th-cloud-build/images/23-network-random-2.png" alt="瀏覽器 Network 面板的隨機選餐 API 請求（畫面 2）" class="image-medium image-center">
 </div>
 
 Note: Windows / Linux 可用 F12 或 Ctrl+Shift+I，macOS 可用 Cmd+Option+I。不同瀏覽器名稱可能略有差異。後端隨機抽選可以連續抽到同一餐，重複不是錯誤。
@@ -1067,7 +1067,7 @@ API 回傳資料，不一定會回傳一個漂亮的網頁。
 
 **Trigger 應該會因為這筆 Commit，自動開始新的建置。**
 
-<img src="/decks/gdg-5th-cloud-build/images/24-auto-build.png" alt="Commit 觸發自動建置" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/24-auto-build.png" alt="Commit 觸發自動建置" class="image-medium image-center">
 
 ---
 
@@ -1081,7 +1081,7 @@ API 回傳資料，不一定會回傳一個漂亮的網頁。
 
 Revision 可以先想成 Cloud Run 的一次部署版本。
 
-<img src="/decks/gdg-5th-cloud-build/images/25-new-revision.png" alt="Cloud Run 的新 Revision" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/25-new-revision.png" alt="Cloud Run 的新 Revision" class="image-medium image-center">
 
 Note: 首次部署後未手動更改流量配置時，這套部署流程會讓新版本接收流量。若曾手動固定流量到舊 Revision，請在 Manage traffic 確認流量指向新版本。
 
@@ -1118,7 +1118,7 @@ Note: 首次部署後未手動更改流量配置時，這套部署流程會讓�
 2. 找到剛剛那筆 Commit 對應的建置
 3. 等待執行結果，這次應該會看到 **Failed**
 
-<img src="/decks/gdg-5th-cloud-build/images/26a-build-failed.png" alt="Cloud Build 建置失敗狀態" class="image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/26a-build-failed.png" alt="Cloud Build 建置失敗狀態" class="image-center">
 
 Note: 先完成 GitHub 網頁 Commit（更新遠端分支並觸發建置），實際看到 Cloud Build 失敗，再切到下一頁「為什麼不行」梗圖。不要還沒看結果就先破梗。
 
@@ -1157,7 +1157,7 @@ if (
 - `build`、`push`、`deploy` 沒有執行
 - 這個負價格版本沒有部署出去
 
-<img src="/decks/gdg-5th-cloud-build/images/26-negative-price.png" alt="負價格驗證錯誤日誌" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/26-negative-price.png" alt="負價格驗證錯誤日誌" class="image-medium image-center">
 
 ---
 
@@ -1169,7 +1169,7 @@ if (
 
 這次 `check` 就停住了，還沒走到部署，因此不會替換正在服務的版本。
 
-<img src="/decks/gdg-5th-cloud-build/images/27-old-version-running.png" alt="原本的網站版本持續提供服務" class="image-medium image-center">
+<img data-src="/decks/gdg-5th-cloud-build/images/27-old-version-running.png" alt="原本的網站版本持續提供服務" class="image-medium image-center">
 
 Note: 這裡描述的是「check 失敗、deploy 尚未執行」的情境，不宣稱所有部署失敗都會自動回滾。
 

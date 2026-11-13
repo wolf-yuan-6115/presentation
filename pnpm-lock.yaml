@@ -166,15 +166,12 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/chiron-goround-tc':
+        specifier: ^5.3.1
+        version: 5.3.1
       '@fontsource-variable/jetbrains-mono':
         specifier: ^5.2.6
         version: 5.2.6
-      '@fontsource/lxgw-wenkai-tc':
-        specifier: ^5.3.1
-        version: 5.3.1
-      '@fontsource/space-mono':
-        specifier: ^5.3.0
-        version: 5.3.0
       '@iconify-json/material-symbols':
         specifier: ^1.2.28
         version: 1.2.28
@@ -849,14 +846,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource-variable/chiron-goround-tc@5.3.1':
+    resolution: {integrity: sha512-NkC+5+AFjRYnLe2nRxNiMT/WJmmVRiaUfolrlgOrrzYIa7C/W64dxVY2MfE3wkJCFJhGnBlBXRtiSnwjFBNyqg==}
+
   '@fontsource-variable/jetbrains-mono@5.2.6':
     resolution: {integrity: sha512-1pvtyK6H1paBOixbtZ9xfQgArVQ4SJMW3WSGZPOd5PiW3yg0t8umwKnjDMzW2ofb7qSdiXnsnIaHPT36vEOdlg==}
-
-  '@fontsource/lxgw-wenkai-tc@5.3.1':
-    resolution: {integrity: sha512-oulAMD2B40s+em16ZgcawwoVcBLBackzByuNzOg6D99J4G5Jjf6QyDvQFHWt3lIy3GgzQGGiU9mjIUvx5k7r4A==}
-
-  '@fontsource/space-mono@5.3.0':
-    resolution: {integrity: sha512-FrpBMOVWn3PRdRHlrZWC55X3kZG/2BTH7SM5ZyS/bky3iKya2BturI5lk+t0RoDQL2JyHzURsVq/EisCsxpI5A==}
 
   '@iconify-json/material-symbols@1.2.28':
     resolution: {integrity: sha512-yJsuEWZ9cDhQfg9qt4YQYhAqh6Pht0B23fGxr/jbMV12yJIft48Z/Qg5txqAXXsueDci2ZxAPqBPyKZIaEBq1w==}
@@ -3895,11 +3889,9 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
+  '@fontsource-variable/chiron-goround-tc@5.3.1': {}
+
   '@fontsource-variable/jetbrains-mono@5.2.6': {}
-
-  '@fontsource/lxgw-wenkai-tc@5.3.1': {}
-
-  '@fontsource/space-mono@5.3.0': {}
 
   '@iconify-json/material-symbols@1.2.28':
     dependencies:

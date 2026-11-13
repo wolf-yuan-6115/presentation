@@ -32,7 +32,6 @@ title: My talk
 description: What the audience will learn
 order: 4
 language: en
-font: mono
 ---
 
 <!-- .slide: class="cover" -->
@@ -56,7 +55,9 @@ Content goes here.
 More content.
 ```
 
-The filename becomes `/my-talk/` and the deck is automatically listed on the homepage, ordered by descending `order`. All metadata fields are required. Use `language: zh-Hant` and `font: wenkai` for the Chinese font preset. Store images in `public/decks/my-talk/` and reference them as `/decks/my-talk/image.png`; reuse common assets from `/decks/shared/`.
+The filename becomes `/my-talk/` and the deck is automatically listed on the homepage, ordered by descending `order`. All metadata fields are required. Use `language: zh-Hant` for Chinese presentations. All slides use Chiron GoRound TC Variable. Store images in `public/decks/my-talk/` and reference them as `/decks/my-talk/image.png`; reuse common assets from `/decks/shared/`.
+
+Use `<img data-src="/decks/my-talk/image.png" alt="Description">` for slide images so Reveal.js loads them as nearby slides become visible. Backgrounds use `data-background-image`, which Reveal.js already loads lazily.
 
 Only leading frontmatter is parsed. Slide separators are standalone `---` lines; use `<hr>` for decorative rules so formatting cannot accidentally create slides. The optional standalone `<!-- qr -->` marker inserts the shared QR slide and does not need surrounding separators. Markdown is trusted repository content and may include HTML; never put secrets in decks. Reveal renders the embedded Markdown in the browser.
 

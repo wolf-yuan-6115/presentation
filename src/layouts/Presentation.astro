@@ -1,8 +1,6 @@
 ---
 import "reveal.js/reveal.css";
-import "@fontsource-variable/jetbrains-mono/wght.css";
-import "@fontsource/lxgw-wenkai-tc/400.css";
-import "@fontsource/space-mono/400.css";
+import "@fontsource-variable/chiron-goround-tc/wght.css";
 import "../styles/presentation.css";
 import QRCode from "../components/QRCode.astro";
 import type { Deck } from "../lib/deck";
@@ -27,7 +25,7 @@ const parts = deck.body.split(/^<!-- qr -->\s*$/m);
     />
     <title>{deck.title} - Wolf Yuan</title>
   </head>
-  <body class:list={["presentation", `font-${deck.font}`]}>
+  <body class="presentation">
     <div class="reveal">
       <div class="slides">
         {

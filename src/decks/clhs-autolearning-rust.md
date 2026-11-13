@@ -3,7 +3,6 @@ title: Rust 自主學習成果
 description: 高二上的自主學習計畫報告。介紹什麼是 Rust 程式語言，為什麼我想學它，還有它到底多優雅 ✨
 order: 1
 language: zh-Hant
-font: wenkai
 ---
 
 <!-- .slide: class="cover" data-background-image="/decks/clhs-autolearning-rust/background.jpg" data-background-opacity="0.2" -->
@@ -145,7 +144,7 @@ Rust 是靜態型別的程式語言，代表變數只能擁有一種型別，整
 
 前一個例子我們舉了加入 `mut 來變更變數的值，我們可以在編譯時看到 `rustc` 給了我們溫馨的提示：
 
-<img src="/decks/clhs-autolearning-rust/images/rust-noneedtomut.png" class="image-small">
+<img data-src="/decks/clhs-autolearning-rust/images/rust-noneedtomut.png" class="image-small">
 
 這個提示告訴我們，我們其實不需要加上 `mut` 來變更變數的值，因為我們在前面那個範例中只是單純的變更變數的值而已。
 
@@ -230,7 +229,7 @@ async fn main() {
 
 我後來把 `!ping` 改成了 `!help` 加上了 embed，然後改東改西，最後變成了這樣：
 
-<img src="/decks/clhs-autolearning-rust/images/rust-result.png" class="image-small">
+<img data-src="/decks/clhs-autolearning-rust/images/rust-result.png" class="image-small">
 
 ---
 
@@ -257,7 +256,7 @@ async fn main() {
 
 這邊送一個 Rust... 的吉祥物給各位，是一隻可愛的螃蟹
 
-<img src="/decks/clhs-autolearning-rust/images/rustacean-orig-noshadow.png" class="image-small">
+<img data-src="/decks/clhs-autolearning-rust/images/rustacean-orig-noshadow.png" class="image-small">
 
 ---
 

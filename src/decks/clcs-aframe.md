@@ -3,7 +3,6 @@ title: A-Frame 3D webside hand-on
 description: A simple A-frame website intro for CLCS
 order: 3
 language: en
-font: mono
 ---
 
 <!-- .slide: class="cover" data-background-image="/decks/clcs-aframe/background.jpg" data-background-opacity="0.2" -->
@@ -77,14 +76,14 @@ Please open a folder inside Visual Studio Code.
 Create a file named: `index.html` and press `!` in editor, then press enter after this menu comes out:
 
 <p>
-  <img src="/decks/shared/html-emmet-init.png" class="image-small">
+  <img data-src="/decks/shared/html-emmet-init.png" class="image-small">
 </p>
 
 > Forgot how to do it? Review the previous [HTML introduction presentation here!](https://presentation.wolf-yuan.dev/clcs-1st-html-basic/)
 
 Start "Live Server," and open `http://localhost:5500/index.html` in your web browser.
 
-![VSCode Live Server](/decks/shared/vscode-live-server-start.png)
+<p><img data-src="/decks/shared/vscode-live-server-start.png" alt="VSCode Live Server"></p>
 
 ---
 
@@ -168,7 +167,7 @@ Add this code inside the `<body>` tag:
 If **_nothing went wrong_**, you should see some 3D objects in your web browser. Like so:
 
 <p>
-<img src="/decks/clcs-aframe/images/a-frame.png" class="image-tall image-center">
+<img data-src="/decks/clcs-aframe/images/a-frame.png" class="image-tall image-center">
 </p>
 
 > Use your mouse the click and drag to rotate the view.
@@ -193,7 +192,7 @@ Now, let's add some more shapes to our website.
 According to the [official A-Frame documentation](https://aframe.io/docs/1.7.0/introduction/), there are some predefined shapes you can use.
 
 <p>
-<img src="/decks/clcs-aframe/images/a-frame-shapes.png" class="image-tall image-center">
+<img data-src="/decks/clcs-aframe/images/a-frame-shapes.png" class="image-tall image-center">
 </p>
 
 ---
@@ -269,7 +268,7 @@ Now, let's add a box to our world.
 <div class="fragment">
 
 <p>
-<img src="/decks/clcs-aframe/images/a-frame-box.png" class="image-medium image-center">
+<img data-src="/decks/clcs-aframe/images/a-frame-box.png" class="image-medium image-center">
 </p>
 
 </div>
@@ -292,7 +291,7 @@ After changing `color` to `#00FF00`, position to `0 0 0`, you should see a green
 <pre><code class="language-html" data-trim data-line-numbers="">&lt;a-box position=&quot;0 0 0&quot; rotation=&quot;0 45 0&quot; color=&quot;#00FF00&quot;&gt;&lt;/a-box&gt;</code></pre>
 
 <p>
-<img src="/decks/clcs-aframe/images/a-frame-green-box.png" class="image-small image-center">
+<img data-src="/decks/clcs-aframe/images/a-frame-green-box.png" class="image-small image-center">
 </p>
 
 ---
@@ -312,4 +311,4 @@ At this point you should have:
 >
 > Press `Ctrl + Alt + I`, this will bring up A-Frame Inspector. You can use this tool to move the shape around and change its color, then use it within your code.
 >
-> <img src="/decks/clcs-aframe/images/a-frame-inspect.png" class="image-medium">
+> <img data-src="/decks/clcs-aframe/images/a-frame-inspect.png" class="image-medium">
