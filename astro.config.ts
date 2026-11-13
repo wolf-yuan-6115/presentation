@@ -2,28 +2,28 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
+import playformCompress from "@playform/compress";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://presentation.wolf-yuan.dev",
-  integrations: [
-    icon({
-      iconDir: "public",
-      include: {
-        "material-symbols": [
-          "home-rounded",
-          "arrow-back-rounded",
-          "favorite-rounded",
-        ],
-        "simple-icons": [
-          "gitlab",
-          "astro",
-          "tailwindcss",
-          "facebook",
-          "instagram",
-        ],
-      },
-    }),
-  ],
+  integrations: [icon({
+    iconDir: "public",
+    include: {
+      "material-symbols": [
+        "home-rounded",
+        "arrow-back-rounded",
+        "favorite-rounded",
+      ],
+      "simple-icons": [
+        "gitlab",
+        "astro",
+        "tailwindcss",
+        "facebook",
+        "instagram",
+      ],
+    },
+  }), playformCompress()],
   output: "static",
   image: {
     service: {
