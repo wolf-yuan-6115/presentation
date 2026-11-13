@@ -191,6 +191,18 @@ body.presentation {
 .reveal .image-center {
   margin-inline: auto;
 }
+/* Focus the repository form without modifying the original screenshot. */
+.reveal .repository-screenshot {
+  height: 660px;
+  overflow: hidden;
+}
+.reveal .repository-screenshot img {
+  width: 2500px;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  transform: translate(-365px, -135px);
+}
 .reveal .image-small {
   max-height: 144px;
 }
@@ -205,6 +217,11 @@ body.presentation {
 }
 .reveal .image-narrow {
   max-width: 320px;
+}
+.reveal .image-flex {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
 }
 .reveal .text-small {
   font-size: 0.8em;
