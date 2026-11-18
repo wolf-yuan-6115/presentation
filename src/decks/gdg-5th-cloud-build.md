@@ -17,16 +17,27 @@ language: zh-Hant
 
 <!-- qr -->
 
+## $ whoami
+
+### Wolf Yuan
+
+- 資訊工程學系大一
+- 在 SITCON 跟其他神奇的資訊社群打滾
+- 前端開發跟伺服器維運，妥妥的 DevOps
+- 玩 Linux 玩的
+- JavaScript,  TypeScript, Python, Bash etc.
+- AI 菜雞，四個月前才開始訂 ChatGPT
+
+---
+
 ## 課前確認你有
 
 - 一台可以上網的電腦，以及瀏覽器
 - **GitHub 帳號**，等等要 Fork 範本，請先登入
 - **Google 帳號**，可以登入 Google Cloud Console
-- 一個 Google Cloud 專案，以及建立資源、設定 IAM 的權限
+- 一個課前設定好的 Google Cloud 專案
 
-今天主要用網頁介面操作，**不需要先安裝 Bun、Docker 或 VSCode**。
-
-Note: 開課前先停在這一頁，讓大家確認帳號。課前確認組織政策允許建立服務帳戶、連接 GitHub，以及公開 Cloud Run 服務。若使用課程提供的專案，請管理者先完成帳單與權限配置。
+今天主要用網頁介面操作，**不需要先安裝 Bun、Docker 或 VSCode**，只要帶一臺電腦跟快樂的心（？
 
 ---
 
@@ -585,15 +596,11 @@ Note: 這時還沒建立 Trigger，這次 Commit 不會自動部署。課程示�
 
 打開 [https://console.cloud.google.com](https://console.cloud.google.com/)，從頂端的專案選擇器，選擇今天要用的專案。
 
-- 確認帳單已啟用
-- 記下 **Project ID**，不是顯示名稱，也不是 Project number
-- 後面看到 `你的專案ID`，都要換成這個值
-
 <img data-src="/decks/gdg-5th-cloud-build/images/06-project-id.png" alt="Google Cloud 專案 ID" class="image-medium image-center">
 
-今天區域統一用 **`us-central1`**，避免前後設定對不起來。
+今天的 Cloud Build、Artifact Registry 和 Cloud Run 都選台灣 **`asia-east1`**。部分操作截圖來自舊的美國區域，請依這頁選台灣。
 
-Note: 使用專用的示範專案，避免混到既有服務。us-central1 沿用 starter，不代表所有建置、儲存和網路流量都免費。
+Note: 使用專用的示範專案，避免混到既有服務。asia-east1 沿用 starter，不代表所有建置、儲存和網路流量都免費。
 
 ---
 
@@ -625,7 +632,7 @@ Note: Secret Manager 用於 Cloud Build 的 GitHub connection 儲存授權資訊
 | Format        | Docker        |
 | Mode          | Standard      |
 | Location type | Region        |
-| Region        | `us-central1` |
+| Region        | `asia-east1` |
 
 Note: 參考：https://docs.cloud.google.com/artifact-registry/docs/repositories/create-repos 名稱需對上 cloudbuild.yaml 的 \_REPOSITORY。其餘選項維持適用於課程專案的預設值。
 
@@ -735,7 +742,7 @@ Note: 角色 ID：roles/artifactregistry.writer。授權範圍是這個 Artifact
 先不要急著按部署，確認一下：
 
 - 專案與帳單準備好了，API 都已啟用
-- `food-demo` 映像儲存庫在 `us-central1`
+- `food-demo` 映像儲存庫在 `asia-east1`
 - build 和 runtime 兩個帳戶都建立好了
 - build 能寫映像、寫日誌、部署服務，並使用 runtime 帳戶
 
@@ -754,7 +761,7 @@ Note: 角色 ID：roles/artifactregistry.writer。授權範圍是這個 Artifact
 進入 **Cloud Build / Repositories**，選 **2nd gen**，點 **Create host connection**。
 
 - Provider：GitHub
-- Region：`us-central1`
+- Region：`asia-east1`
 - Name：`github-demo`
 
 點 Connect，依畫面完成 GitHub 授權與 Cloud Build GitHub App 安裝。
@@ -805,7 +812,7 @@ Note: 參考：https://docs.cloud.google.com/build/docs/automating-builds/create
 | 欄位   | 今天填什麼           |
 | ------ | -------------------- |
 | Name   | `food-demo`          |
-| Region | `us-central1`        |
+| Region | `asia-east1`        |
 | Event  | Push to a branch     |
 | Source | 2nd gen，自己的 Fork |
 | Branch | `^main$`             |
@@ -847,7 +854,7 @@ Note: 不要選只根據 Dockerfile 建置的設定，否則不會執行範本�
 
 | 參數          | 預設值        |
 | ------------- | ------------- |
-| `_REGION`     | `us-central1` |
+| `_REGION`     | `asia-east1` |
 | `_REPOSITORY` | `food-demo`   |
 | `_SERVICE`    | `food-demo`   |
 
@@ -877,7 +884,7 @@ Note: 巢狀 substitution 使用 `${PROJECT_ID}`，保留 YAML 的 dynamicSubsti
 
 ## 看看雲端在忙什麼
 
-進入 **Cloud Build / History**，區域選 `us-central1`，打開這次建置。
+進入 **Cloud Build / History**，區域選 `asia-east1`，打開這次建置。
 
 你應該會看到四個步驟：
 
@@ -1114,7 +1121,7 @@ Note: 首次部署後未手動更改流量配置時，這套部署流程會讓�
 
 修改送上 GitHub 後，Trigger 會自動開始新的建置。
 
-1. 打開 **Cloud Build / History**，區域選 `us-central1`
+1. 打開 **Cloud Build / History**，區域選 `asia-east1`
 2. 找到剛剛那筆 Commit 對應的建置
 3. 等待執行結果，這次應該會看到 **Failed**
 
