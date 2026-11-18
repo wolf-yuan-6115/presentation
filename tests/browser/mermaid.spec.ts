@@ -19,7 +19,7 @@ test("Mermaid does not auto-render while diagram fonts are loading", async ({
       });
     };
   });
-  await page.goto(`${deckURL}#/13`);
+  await page.goto(deckURL);
   await expect(page.locator("html")).toHaveAttribute(
     "data-diagram-fonts-pending",
     "true",
@@ -35,9 +35,18 @@ test("Mermaid does not auto-render while diagram fonts are loading", async ({
   await expect(page.locator(".reveal")).toHaveClass(/ready/);
   await expect(page.locator(".mermaid-diagram svg")).toHaveCount(6);
   await expect(page.locator(".mermaid-error")).toHaveCount(0);
-  await expect(
-    page.locator("section.present .mermaid-diagram svg"),
-  ).toBeVisible();
+  const diagram = page.locator(".mermaid-diagram svg").filter({
+    has: page
+      .locator("title")
+      .filter({ hasText: "在自己的電腦執行網站" }),
+  });
+  await expect(diagram).toHaveCount(1);
+  const slideIndex = await diagram.evaluate((svg) => {
+    const slide = svg.closest(".slides > section")!;
+    return Array.from(slide.parentElement!.children).indexOf(slide);
+  });
+  await page.goto(`${deckURL}#/${slideIndex}`);
+  await expect(diagram).toBeVisible();
 });
 
 test("Mermaid renders hidden slides, navigation and print without overflow", async ({

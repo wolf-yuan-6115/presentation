@@ -55,7 +55,7 @@ Content goes here.
 More content.
 ```
 
-The filename becomes `/my-talk/` and the deck is automatically listed on the homepage, ordered by descending `order`. All metadata fields are required. Use `language: zh-Hant` for Chinese presentations. All slides use Chiron GoRound TC Variable. Store images in `public/decks/my-talk/` and reference them as `/decks/my-talk/image.png`; reuse common assets from `/decks/shared/`.
+The filename becomes `/my-talk/` and the deck is automatically listed on the homepage, ordered by descending `order`. All metadata fields are required. Use `language: zh-Hant` for Chinese presentations. Slides use Chiron GoRound TC Variable for prose and JetBrains Mono Variable for code and other monospace text. Store images in `public/decks/my-talk/` and reference them as `/decks/my-talk/image.png`; reuse common assets from `/decks/shared/`.
 
 Use `<img data-src="/decks/my-talk/image.png" alt="Description">` for slide images so Reveal.js loads them as nearby slides become visible. Backgrounds use `data-background-image`, which Reveal.js already loads lazily.
 

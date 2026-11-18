@@ -104,7 +104,9 @@ body.presentation {
 .reveal pre,
 .reveal code,
 .reveal kbd,
-.reveal samp,
+.reveal samp {
+  font-family: "JetBrains Mono Variable", monospace;
+}
 .reveal .slide-number,
 .reveal .speaker-notes,
 .reveal button,
@@ -183,6 +185,7 @@ body.presentation {
 }
 .reveal .slides .qr-slide {
   display: flex !important;
+  justify-content: center;
   align-items: center;
   gap: 40px;
   min-height: 650px;
