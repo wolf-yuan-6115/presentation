@@ -272,7 +272,7 @@ Cloud Run 還可以根據你的流量自動做 scaling，面對更多流量時�
 
 像是這樣：
 
-```Dockerfile
+```dockerfile
 FROM debian:13-slim
 
 RUN apt update && apt install git
